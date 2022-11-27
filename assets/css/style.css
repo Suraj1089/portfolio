@@ -18,6 +18,7 @@
 
 .animated-item {
   font-size: 38px;
+  text-align: left;
   line-height: inherit;
   display: block;
   opacity: 0;
@@ -33,6 +34,12 @@
 }
 .animated-item:nth-child(3n + 3) {
   animation-delay: 4s;
+}
+
+@media (max-device-width: 900px){
+  .animated-item {
+    text-align: center;
+  }
 }
 
 @keyframes BottomTotop {
