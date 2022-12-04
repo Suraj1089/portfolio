@@ -47,11 +47,7 @@
       <!-- <h2>
 
 
-        <div class="animated-info">
-          <span class="animated-item">I am Python Developer</span>
-          <span class="animated-item">Data Engineer</span>
-          <span class="animated-item">Software Developer</span>
-        </div>
+       
       </h2> -->
       <h3 class="animated animated-text">
         <!-- <span class="mr-2">I'm a</span> -->
@@ -62,11 +58,6 @@
           <span class="animated-item">Python Developer</span>
         </div>
       </h3>
-      <!-- <div class="custom-btn-group mt-4">
-        <a href="./assets/resume/Suraj_Pisal_Resume.pdf" download class="btn mr-lg-2 custom-btn"><i
-            class='uil uil-file-alt'></i>
-          Download Resume</a>
-      </div> -->
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -76,7 +67,9 @@
           <li><a class="nav-link" href="#services">Projects</a></li>
           <li><a class="nav-link" href="#portfolio">Images</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
+          <!-- Rounded switch -->
         </ul>
+
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -86,12 +79,23 @@
         <a href="https://www.instagram.com/suraj_pisal9/" class="instagram" target="_blank"><i
             class="bi bi-instagram"></i></a>
         <a href="https://www.linkedin.com/in/surajpisal/" class="linkedin" target="_blank"><i
-            class="bi bi-linkedin"></i></a> 
-            <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin"
-          target="_blank"><i class="bi bi-file-earmark-person-fill"></i></a>
+            class="bi bi-linkedin"></i></a>
+        <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin" target="_blank"><i
+            class="bi bi-file-earmark-person-fill"></i></a>
+        <button id="colorChange" type="button" class="btn btn-light btn-sm" data-toggle="button">Light</button>
       </div>
 
     </div>
+    <script>
+        // change background Image on click on colorChange button
+        const colorChange = document.getElementById('colorChange');
+        colorChange.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+       
+
+    </script>
+
   </header><!-- End Header -->
 
   <!-- ======= About Section ======= -->
@@ -107,7 +111,7 @@
 
       <div class="row">
         <div class="col-lg-4" data-aos="fade-right">
-          <img src="assets/img/suraj_pisal_photo.jpeg" class="img-fluid" alt="">
+          <img id="homeImg" src="assets/img/suraj_pisal_photo.jpeg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
           <h3>Python Developer &amp; Data Engineer</h3>
@@ -838,30 +842,24 @@
   <script src="assets/js/index.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
   </script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("service_0od9jlw"); //use your USER ID
-    })();
-  </script>
+
+
+
+  <!-- function to change the imgage -->
 
   <script>
 
-    var templateParams = {
-      name: 'James',
-      notes: 'Check this out!'
-    };
+    // function to change homepage button on click on imgChangeButtion
 
-    emailjs.sendForm('service_0od9jlw', 'template_cqytes3', templateParams) //use your Service ID and Template ID
-      .then(function (response) {
-        console.log('SUCCESS!', response.status, response.text);
-      }, function (error) {
-        console.log('FAILED...', error);
-      });
+    const btn = document.getElementById('imgChangeButn');
+    btn.addEventListener('toggle', toggleImg);
+
+    function toggleImg(e) {
+      console.log(e);
+    }
 
   </script>
 
-
-  <!-- <input type="button" value="Send Email" onclick="sendEmail()"> -->
 
 
 </body>
