@@ -7,7 +7,7 @@
   vertical-align: top;
   margin-top: 5px;
   min-width: 500px;
- 
+
   position: relative;
 }
 
@@ -36,7 +36,7 @@
   animation-delay: 4s;
 }
 
-@media (max-device-width: 900px){
+@media (max-device-width: 900px) {
   .animated-item {
     text-align: center;
   }
@@ -76,8 +76,6 @@ body {
   position: relative;
   background: transparent;
 }
-
-
 
 @media (min-width: 1024px) {
   body::before {
@@ -1245,9 +1243,7 @@ section .container {
   color: #fff;
 }
 
-
 /* on off button  */
-
 
 /* The switch - the box around the slider */
 .switch {
@@ -1255,6 +1251,7 @@ section .container {
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-top: 2px;
 }
 
 /* Hide default HTML checkbox */
@@ -1273,8 +1270,9 @@ section .container {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  
 }
 
 .slider:before {
@@ -1285,16 +1283,16 @@ section .container {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {

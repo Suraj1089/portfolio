@@ -32,10 +32,15 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <style>
+    body {
+      background: #000000 url("assets/img/b3.jpg") top center no-repeat;
+      background-size: cover;
+    }
+
     body::before {
       content: "";
       position: fixed;
-      background: #0a06ff url("assets/img/b3.jpg") top right no-repeat;
+      /* background: #000000 url("assets/img/b3.jpg") top right no-repeat; */
       background-size: cover;
       left: 0;
       right: 0;
@@ -94,19 +99,30 @@
             class="bi bi-linkedin"></i></a>
         <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin" target="_blank"><i
             class="bi bi-file-earmark-person-fill"></i></a>
+        <!-- Default checked -->
+        <!-- Rounded switch -->
+        <label class="switch">
+          <input id="colorChange" type="checkbox">
+          <span class="slider round"></span>
+        </label>
         <!-- <button id="colorChange" type="button" class="btn btn-light btn-sm">Light</button> -->
       </div>
 
     </div>
     <script>
       // change background Image on click on colorChange button
-      const colorChange = document.getElementById('colorChange');
-      colorChange.addEventListener('click', () => {
-      
-        console.log('clicked');
-        console.log(document.body.style.background);
-      });
+      const colorChangeBtn = document.getElementById("colorChange");
+      // change background image on click on slider round button
 
+      colorChangeBtn.addEventListener("click", function () {
+        // show text on mouse hover on slider round button
+
+        if (colorChangeBtn.checked) {
+          document.body.style.backgroundImage = "url('assets/img/b4.jpg')";
+        } else {
+          document.body.style.backgroundImage = "url('assets/img/b3.jpg')";
+        }
+      });
 
     </script>
 
@@ -741,7 +757,7 @@
     <!-- You can delete the links only if you purchased the pro version. -->
     <!-- Licensing information: https://bootstrapmade.com/license/ -->
     <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
-    <a href="#">@suraj pisal</a>
+    <a href="">Developed by - @Suraj Pisal</a>
   </div>
 
   <!-- Vendor JS Files -->
