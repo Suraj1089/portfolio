@@ -83,13 +83,13 @@
         <a href="https://www.linkedin.com/in/surajpisal/" class="linkedin" target="_blank"><i
             class="bi bi-linkedin"></i></a>
         <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin" target="_blank"><i
-            class="bi bi-file-earmark-person-fill"></i></a>
+            class="bi bi-file-earmark-person-fill resume-hover"></i></a>
         <!-- Default checked -->
         <!-- Rounded switch -->
-        <label class="switch">
+        <!-- <label class="switch">
           <input id="colorChange" type="checkbox">
           <span class="slider round"></span>
-        </label>
+        </label> -->
         <!-- <button id="colorChange" type="button" class="btn btn-light btn-sm">Light</button> -->
       </div>
 
@@ -97,6 +97,7 @@
     <script>
       // change background Image on click on colorChange button
       const colorChangeBtn = document.getElementById("colorChange");
+      document.body.style.backgroundImage = "url('assets/img/b4.jpg')";
       // change background image on click on slider round button
 
       colorChangeBtn.addEventListener("click", function () {
@@ -108,7 +109,6 @@
           document.body.style.backgroundImage = "url('assets/img/b3.jpg')";
         }
       });
-
     </script>
 
   </header><!-- End Header -->
@@ -796,18 +796,14 @@
       var trace1 = {
   x: ['Python', 'C++', 'SQL', 'Web Development', 'Machine Learning'],
   y: [85, 70, 80, 60, 72],
-          
-    var templateParams = {
-      name: 'James',
-      notes: 'Check this out!'
-    };
 
-    emailjs.sendForm('service_0od9jlw', 'template_cqytes3', templateParams) //use your Service ID and Template ID
-      .then(function (response) {
-        console.log('SUCCESS!', response.status, response.text);
-      }, function (error) {
-        console.log('FAILED...', error);
-      });
+  marker:{
+    color: ['rgba(208,224,104,1)', 'rgba(222,45,38,0.8)', 'rgba(264,204,204,1)', 'rgba(207,201,201,1)', 'rgba(209,264,201,1)']
+  },
+  type: 'bar'
+};
+
+var data = [trace1];
 
 var layout = {
   title: 'Skills',
@@ -821,6 +817,10 @@ var layout = {
   bargap :0.05
 
 };
+
+
+Plotly.newPlot('myDiv', data, layout);
+    </script>
 
 
 

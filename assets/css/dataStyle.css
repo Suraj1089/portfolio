@@ -129,3 +129,14 @@ table {
 .twenty {
   background: #7F8C8D;
 }
+
+
+
+.hide {
+  display: none;
+}
+
+.resume-hover:hover + .hide {
+  display: block;
+  color: red;
+}
