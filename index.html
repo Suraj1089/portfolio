@@ -34,6 +34,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/dataStyle.css">
 
+
 </head>
 
 <body>
@@ -48,11 +49,7 @@
       <!-- <h2>
 
 
-        <div class="animated-info">
-          <span class="animated-item">I am Python Developer</span>
-          <span class="animated-item">Data Engineer</span>
-          <span class="animated-item">Software Developer</span>
-        </div>
+       
       </h2> -->
       <h3 class="animated animated-text">
         <!-- <span class="mr-2">I'm a</span> -->
@@ -63,11 +60,6 @@
           <span class="animated-item">Python Developer</span>
         </div>
       </h3>
-      <!-- <div class="custom-btn-group mt-4">
-        <a href="./assets/resume/Suraj_Pisal_Resume.pdf" download class="btn mr-lg-2 custom-btn"><i
-            class='uil uil-file-alt'></i>
-          Download Resume</a>
-      </div> -->
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -77,7 +69,9 @@
           <li><a class="nav-link" href="#services">Projects</a></li>
           <li><a class="nav-link" href="#portfolio">Images</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
+          <!-- Rounded switch -->
         </ul>
+
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -87,12 +81,36 @@
         <a href="https://www.instagram.com/suraj_pisal9/" class="instagram" target="_blank"><i
             class="bi bi-instagram"></i></a>
         <a href="https://www.linkedin.com/in/surajpisal/" class="linkedin" target="_blank"><i
-            class="bi bi-linkedin"></i></a> 
-            <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin"
-          target="_blank"><i class="bi bi-file-earmark-person-fill"></i></a>
+            class="bi bi-linkedin"></i></a>
+        <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin" target="_blank"><i
+            class="bi bi-file-earmark-person-fill"></i></a>
+        <!-- Default checked -->
+        <!-- Rounded switch -->
+        <label class="switch">
+          <input id="colorChange" type="checkbox">
+          <span class="slider round"></span>
+        </label>
+        <!-- <button id="colorChange" type="button" class="btn btn-light btn-sm">Light</button> -->
       </div>
 
     </div>
+    <script>
+      // change background Image on click on colorChange button
+      const colorChangeBtn = document.getElementById("colorChange");
+      // change background image on click on slider round button
+
+      colorChangeBtn.addEventListener("click", function () {
+        // show text on mouse hover on slider round button
+
+        if (colorChangeBtn.checked) {
+          document.body.style.backgroundImage = "url('assets/img/b4.jpg')";
+        } else {
+          document.body.style.backgroundImage = "url('assets/img/b3.jpg')";
+        }
+      });
+
+    </script>
+
   </header><!-- End Header -->
 
   <!-- ======= About Section ======= -->
@@ -108,7 +126,7 @@
 
       <div class="row">
         <div class="col-lg-4" data-aos="fade-right">
-          <img src="assets/img/suraj_pisal_photo.jpeg" class="img-fluid" alt="">
+          <img id="homeImg" src="assets/img/suraj_pisal_photo.jpeg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
           <h3>Python Developer &amp; Data Engineer</h3>
@@ -745,7 +763,7 @@
     <!-- You can delete the links only if you purchased the pro version. -->
     <!-- Licensing information: https://bootstrapmade.com/license/ -->
     <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
-    <a href="#">@suraj pisal</a>
+    <a href="">Developed by - @Suraj Pisal</a>
   </div>
 
   <!-- Vendor JS Files -->
@@ -778,14 +796,18 @@
       var trace1 = {
   x: ['Python', 'C++', 'SQL', 'Web Development', 'Machine Learning'],
   y: [85, 70, 80, 60, 72],
+          
+    var templateParams = {
+      name: 'James',
+      notes: 'Check this out!'
+    };
 
-  marker:{
-    color: ['rgba(208,224,104,1)', 'rgba(222,45,38,0.8)', 'rgba(264,204,204,1)', 'rgba(207,201,201,1)', 'rgba(209,264,201,1)']
-  },
-  type: 'bar'
-};
-
-var data = [trace1];
+    emailjs.sendForm('service_0od9jlw', 'template_cqytes3', templateParams) //use your Service ID and Template ID
+      .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+      }, function (error) {
+        console.log('FAILED...', error);
+      });
 
 var layout = {
   title: 'Skills',
@@ -801,8 +823,7 @@ var layout = {
 };
 
 
-Plotly.newPlot('myDiv', data, layout);
-    </script>
 
-  
+</body>
+
 </html>
