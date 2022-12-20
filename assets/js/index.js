@@ -9,3 +9,4 @@ emailjs.sendForm('service_0od9jlw', 'template_cqytes3', templateParams) //use yo
     }, function(error) {
        console.log('FAILED...', error);
     });
+
