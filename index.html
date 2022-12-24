@@ -19,8 +19,9 @@
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
 
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
   <!-- Vendor CSS Files -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -76,21 +77,15 @@
       </nav><!-- .navbar -->
 
       <div class="social-links">
-        <a href="https://twitter.com/SurajPi79793386" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
-        <a href="https://github.com/Suraj1089/" class="github" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.instagram.com/suraj_pisal9/" class="instagram" target="_blank"><i
+        <a href="https://twitter.com/SurajPi79793386" class="twitter tooltip" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://github.com/Suraj1089/" class="github" target="_blank" title="Github"><i class="bi bi-github"></i></a>
+        <a href="https://www.instagram.com/suraj_pisal9/" class="instagram" target="_blank" title="instagram"><i
             class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/surajpisal/" class="linkedin" target="_blank"><i
+        <a href="https://www.linkedin.com/in/surajpisal/" class="linkedin" target="_blank" title="linkedin"><i
             class="bi bi-linkedin"></i></a>
-        <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin" target="_blank"><i
+        <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin" target="_blank" title="Resume"><i
             class="bi bi-file-earmark-person-fill resume-hover"></i></a>
-        <!-- Default checked -->
-        <!-- Rounded switch -->
-        <!-- <label class="switch">
-          <input id="colorChange" type="checkbox">
-          <span class="slider round"></span>
-        </label> -->
-        <!-- <button id="colorChange" type="button" class="btn btn-light btn-sm">Light</button> -->
+
       </div>
 
     </div>
@@ -129,7 +124,7 @@
           <img id="homeImg" src="assets/img/suraj_pisal_photo.jpeg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>Python Developer &amp; Data Engineer</h3>
+          <h3>Software Developer</h3>
           <p class="fst-italic">
             I am a third-year student pursuing a bachelor's in Information Technology from D Y Patil College of
             Engineering Pune. I have strong knowledge of python and SQL. I am curious to learn about other domains,
@@ -166,50 +161,7 @@
 
     </div><!-- End About Me -->
 
-    <!-- ======= Counts ======= -->
-    <div class="counts container">
 
-      <div class="row">
-
-        <div class="col-lg-3 col-md-6">
-          <div class="count-box">
-            <i class="bi bi-emoji-smile"></i>
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-              class="purecounter"></span>
-            <p>Happy Clients</p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-          <div class="count-box">
-            <i class="bi bi-journal-richtext"></i>
-            <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"
-              class="purecounter"></span>
-            <p>Projects</p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-          <div class="count-box">
-            <i class="bi bi-headset"></i>
-            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
-              class="purecounter"></span>
-            <p>Hours Of Support</p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-          <div class="count-box">
-            <i class="bi bi-award"></i>
-            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1"
-              class="purecounter"></span>
-            <p>Awards</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div><!-- End Counts -->
 
     <!-- ======= Skills  ======= -->
     <div class="skills container">
@@ -293,14 +245,14 @@
       </div>
 
     </div><!-- End Skills -->
-  
+
 
     <!-- ======= Interests ======= -->
     <div class="interests container">
 
-        <div class="section-title">
-          <h2>Interests</h2>
-        </div>
+      <div class="section-title">
+        <h2>Interests</h2>
+      </div>
 
       <div class="row">
         <div class="col-lg-3 col-md-4">
@@ -328,22 +280,22 @@
           </div>
         </div>
       </div>
-      
+
     </div><!-- End Interests -->
 
-   
+
   </section><!-- End About Section -->
 
   <!-- ======= Resume Section ======= -->
   <section id="resume" class="resume">
     <div class="container">
-   
+
 
       <div class="section-title">
         <h2>Resume</h2>
         <p>Suraj Pisal</p>
       </div>
-      <p>Data Engineer</p>
+      <p>Software Developer</p>
 
       <div class="row">
         <div class="col-lg-6">
@@ -434,10 +386,17 @@
         </div>
       </div>
 
-      
-      <embed src="assets/resume/Suraj_Pisal_Resume.pdf" width="100%" height="1200px" />
+      <!--collapseer to show resume-->
+
+      <!-- <embed src="assets/resume/Suraj_Pisal_Resume.pdf" width="100%" height="1200px" /> -->
+
+      <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin btn btn-primary" target="_blank"><i
+          class="bi bi-file-earmark-person-fill resume-hover" title="Download PDF">Download PDF</i></a>
     </div>
-    
+
+
+
+
 
   </section><!-- End Resume Section -->
 
@@ -663,18 +622,17 @@
       <h1>Skills</h1>
       <div id="myDiv" style="width: 100%;"></div>
 
-      <!--fetch github contribution graph details user=Suraj1089-->
       <br><br><br>
       <h1>Github contribution</h1>
       <div class="container">
-        
+
         <img style="width: 100%;" src="https://ghchart.rshah.org/Suraj1089" alt="2016rshah's Github chart" />
 
       </div>
     </div>
 
- 
-    
+
+
 
   </section><!-- End Portfolio Section -->
 
@@ -767,60 +725,58 @@
   </div>
 
   <!-- Vendor JS Files -->
- 
+
 
 </body>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<!-- Template Main JS File -->
+<script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/index.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
+</script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="assets/js/index.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
+</script>
+<script>
+  var trace1 = {
+    x: ['Python', 'C++', 'SQL', 'Web Development', 'Machine Learning'],
+    y: [85, 70, 80, 60, 72],
+
+    marker: {
+      color: ['rgba(208,224,104,1)', 'rgba(222,45,38,0.8)', 'rgba(264,204,204,1)', 'rgba(207,201,201,1)', 'rgba(209,264,201,1)']
+    },
+    type: 'bar'
+  };
+
+  var data = [trace1];
+
+  var layout = {
+    title: 'Skills',
+    xaxis: {
+      tickangle: 0
+    },
+    yaxis: {
+      zeroline: false,
+      gridwidth: 2
+    },
+    bargap: 0.05
+
+  };
 
 
-  <!-- Template Main JS File -->
-  <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/index.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
-  </script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script src="assets/js/index.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
-  </script>
-    <script>
-      var trace1 = {
-  x: ['Python', 'C++', 'SQL', 'Web Development', 'Machine Learning'],
-  y: [85, 70, 80, 60, 72],
-
-  marker:{
-    color: ['rgba(208,224,104,1)', 'rgba(222,45,38,0.8)', 'rgba(264,204,204,1)', 'rgba(207,201,201,1)', 'rgba(209,264,201,1)']
-  },
-  type: 'bar'
-};
-
-var data = [trace1];
-
-var layout = {
-  title: 'Skills',
-  xaxis: {
-    tickangle: 0
-  },
-  yaxis: {
-    zeroline: false,
-    gridwidth: 2
-  },
-  bargap :0.05
-
-};
-
-
-Plotly.newPlot('myDiv', data, layout);
-    </script>
+  Plotly.newPlot('myDiv', data, layout);
+</script>
 
 
 
