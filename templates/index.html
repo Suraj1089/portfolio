@@ -20,8 +20,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', path='/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ url_for('static', path='css/style.css') }}" rel="stylesheet">
@@ -86,9 +86,9 @@
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
                     <div class="typed-text d-none">Software Developer</div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="" class="btn btn-outline-light mr-5">Download CV</a>
+                        <a href="{{ url_for('static', path='/Suraj_Pisal_Resume.pdf') }}" class="btn btn-outline-light mr-5" target="_blank">Download CV</a>
                         <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="./video.mp4" data-target="#videoModal">
+                            data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
                             <span></span>
                         </button>
                         <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">About Me</h5>
@@ -344,9 +344,9 @@
             <div class="row portfolio-container">
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-1.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-1.jpg') }}" alt="">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-1.jpg" data-lightbox="portfolio">
+                            <a href="{{ url_for('static',path='/img/portfolio-1.jpg') }}" data-lightbox="portfolio">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -354,9 +354,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-2.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-2.jpg') }}" alt="">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-2.jpg" data-lightbox="portfolio">
+                            <a href="{{ url_for('static',path='/img/portfolio-2.jpg') }}" data-lightbox="portfolio">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -364,9 +364,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-3.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-3.jpg') }}" alt="">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-3.jpg" data-lightbox="portfolio">
+                            <a href="{{ url_for('static',path='/img/portfolio-3.jpg') }}" data-lightbox="portfolio">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -374,9 +374,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-4.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-4.jpg') }}" alt="">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-4.jpg" data-lightbox="portfolio">
+                            <a href="{{ url_for('static',path='/img/portfolio-4.jpg') }}" data-lightbox="portfolio">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -384,9 +384,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-5.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-5.jpg') }}" alt="">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-5.jpg" data-lightbox="portfolio">
+                            <a href="{{ url_for('static',path='/img/portfolio-5.jpg') }}" data-lightbox="portfolio">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -394,9 +394,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-6.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-6.jpg') }}" alt="">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-6.jpg" data-lightbox="portfolio">
+                            <a href="{{ url_for('static',path='/img/portfolio-6.jpg') }}" data-lightbox="portfolio">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -421,21 +421,21 @@
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
                             <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+                            <img class="img-fluid rounded-circle mx-auto mb-3" src="{{ url_for('static', path='/img/testimonial-1.jpg') }}" style="width: 80px; height: 80px;">
                             <h5 class="font-weight-bold m-0">Client Name</h5>
                             <span>Profession</span>
                         </div>
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
                             <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+                            <img class="img-fluid rounded-circle mx-auto mb-3" src="{{ url_for('static', path='/img/testimonial-2.jpg') }}" style="width: 80px; height: 80px;">
                             <h5 class="font-weight-bold m-0">Client Name</h5>
                             <span>Profession</span>
                         </div>
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
                             <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
+                            <img class="img-fluid rounded-circle mx-auto mb-3" src="{{ url_for('static', path='/img/testimonial-3.jpg') }}" style="width: 80px; height: 80px;">
                             <h5 class="font-weight-bold m-0">Client Name</h5>
                             <span>Profession</span>
                         </div>
@@ -457,7 +457,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-5">
                     <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-1.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static', path='/img/blog-1.jpg') }}" alt="">
                         <div class="blog-date">
                             <h4 class="font-weight-bold mb-n1">01</h4>
                             <small class="text-white text-uppercase">Jan</small>
@@ -468,7 +468,7 @@
                 </div>
                 <div class="col-lg-4 mb-5">
                     <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-2.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static', path='/img/blog-2.jpg') }}" alt="">
                         <div class="blog-date">
                             <h4 class="font-weight-bold mb-n1">01</h4>
                             <small class="text-white text-uppercase">Jan</small>
@@ -479,7 +479,7 @@
                 </div>
                 <div class="col-lg-4 mb-5">
                     <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-3.jpg" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static', path='/img/blog-3.jpg') }}" alt="">
                         <div class="blog-date">
                             <h4 class="font-weight-bold mb-n1">01</h4>
                             <small class="text-white text-uppercase">Jan</small>
@@ -576,18 +576,18 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', path='js/lib/typed/typed.min.js') }}"></script>
-    <script src="{{ url_for('static', path='/js/lib/easing/easing.min.js') }}"></script>
-    <script src="{{ url_for('static', path='/js/lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="{{ url_for('static', path='js/lib/isotope/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ url_for('static', path='js/lib/lightbox/js/lightbox.min.js') }}"></script>
+    <script src="{{ url_for('static', path='/lib/typed/typed.min.js') }}"></script>
+    <script src="{{ url_for('static', path='/lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', path='/lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', path='/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', path='/lib/isotope/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', path='/lib/lightbox/js/lightbox.min.js') }}"></script>
 
     <!-- Contact Javascript File -->
-    <script src="{{ url_for('static', path='js/mail/jqBootstrapValidation.min.js') }}"></script>
-    <script src="{{ url_for('static', path='js/mail/contact.js') }}"></script>
+    <script src="{{ url_for('static', path='/mail/jqBootstrapValidation.min.js') }}"></script>
+    <script src="{{ url_for('static', path='/mail/contact.js') }}"></script>
     <!-- Template Javascript -->
-    <script src="{{ url_for('static', path='js/main.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
 </body>
 
 </html>
