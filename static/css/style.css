@@ -243,6 +243,7 @@ textarea {
   line-height: inherit;
 }
 
+
 button,
 input {
   overflow: visible;
@@ -6355,8 +6356,9 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #0BCEAF !important;
+  background-color: #212529;
 }
+
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
