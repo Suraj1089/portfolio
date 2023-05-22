@@ -73,7 +73,7 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="background-color: blue; min-height: 100vh;">
+    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="background-color: #212529; min-height: 100vh;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
@@ -508,6 +508,41 @@
     <script src="{{ url_for('static', path='/mail/contact.js') }}"></script>
     <!-- Template Javascript -->
     <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#contactForm').submit(function(event) {
+        event.preventDefault();
+
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+
+        // Make an AJAX POST request to the backend endpoint
+        $.ajax({
+            type: 'POST',
+            url: '/message',
+            data: {
+                name: name,
+                email: email,
+                subject: subject,
+                message_body: message
+            },
+            success: function(response) {
+                // Display success message
+                console.log(response);
+                $('#success').text('Message sent!');
+            },
+            error: function(error) {
+                console.log(error);
+                // Display error message
+                $('#success').text('Error sending message.');
+            }
+        });
+    });
+});
+</script>
 
     <script>
         function refreshPage() {
