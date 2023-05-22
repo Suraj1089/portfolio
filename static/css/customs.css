@@ -1,0 +1,26 @@
+
+
+.portfolio-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-text-overlay h5 {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.portfolio-item:hover .portfolio-text-overlay {
+    opacity: 1;
+}
+
+

@@ -25,6 +25,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ url_for('static', path='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='css/customs.css') }}" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51" style="background-color: #ffffff;">
@@ -43,7 +44,7 @@
                 <a href="#qualification" class="nav-item nav-link">Education</a>
                 <a href="#skill" class="nav-item nav-link">Skill</a>
                 <a href="#portfolio" class="nav-item nav-link">Projects</a>
-                <a href="#blog" class="nav-item nav-link">Blog</a>
+                <!-- <a href="#blog" class="nav-item nav-link">Blog</a> -->
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
             <a href="#contact" class="btn btn-outline-primary d-none d-lg-block" onclick="scrollToContact()">Hire Me</a>
@@ -110,6 +111,38 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-6">
+                    <h3 class="mb-4">About</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">Name: Suraj Pisal</h5>
+                            <p class="mb-2"><strong>Contact: +91-9370296739</strong> | <strong>surajpisal113@gmail.com</strong></p>
+                            <p>Software developer skilled in Python, SQL, and FastAPI. Passionate about creating new projects.Ability to translate business requirements into technical solutions. Looking to start a career as a software developer intern</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Expericence</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">System Engineer Intern</h5>
+                            <p class="mb-2"><strong>Insponse</strong> | <small>2000 - 2050</small></p>
+                            <p>
+                                • Worked with a range of cutting-edge technologies including Python, FastAPI, Socket Io, Node.js, MongoDB,
+                                Docker, and AWS.
+                            </p>
+                            <p>  Collaborated with other interns and engineers to design and implement efficient and robust solutions for complex
+                                projects.
+                            </p>
+                            <p>
+                                • Contributed to the development of the company’s application, increasing its functionality from 20% to 80%
+                                through the implementation of efficient and robust microservices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
                     <h3 class="mb-4">My Education</h3>
                     <div class="border-left border-primary pt-2 pl-4 ml-2">
                         <div class="position-relative mb-4">
@@ -132,27 +165,31 @@
                         </div>
                     </div>
                 </div>
+                
+                
                 <div class="col-lg-6">
-                    <h3 class="mb-4">My Expericence</h3>
+                    <h3 class="mb-4">Extra-Curricular Activities</h3>
                     <div class="border-left border-primary pt-2 pl-4 ml-2">
                         <div class="position-relative mb-4">
                             <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">System Engineer Intern</h5>
-                            <p class="mb-2"><strong>Insponse</strong> | <small>2000 - 2050</small></p>
                             <p>
-                                • Worked with a range of cutting-edge technologies including Python, FastAPI, Socket Io, Node.js, MongoDB,
-                                Docker, and AWS.
+                                • Winner of Tech-A-Thon hackthon condusted by D Y Patil Pimpari. Created a <a href="https://writemate.streamlit.app/" target="_blank">WriteMate</a> web app.
                             </p>
                             <p>  Collaborated with other interns and engineers to design and implement efficient and robust solutions for complex
                                 projects.
                             </p>
                             <p>
-                                • Contributed to the development of the company’s application, increasing its functionality from 20% to 80%
-                                through the implementation of efficient and robust microservices.
+                                Member-CPMC DYPCOE(College
+                                coding club)- Helps 500+ students
+                                to increase critive thinking by
+                                mentoring them.
                             </p>
+                            
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -254,70 +291,96 @@
             data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
             <span></span>
         </button> -->
-            <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-1.jpg') }}" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+        <div class="row portfolio-container">
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                <div class="position-relative overflow-hidden mb-2">
+                    <img class="img-fluid rounded w-100" src="{{ url_for('static', path='/img/portfolio-1.jpg') }}" alt="">
+                    <div class="portfolio-text-overlay">
+                        <h5 class="text-white">SPPU Result Converter</h5>
+                    </div>
+                    <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                        <button type="button" class="btn-play" data-toggle="modal" data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
                             <span></span>
                         </button>
-                        </div>
+                        <a href="https://example.com" class="btn btn-primary btn-project-link">Project Link</a>
                     </div>
                 </div>
+            </div>
+            <!-- Add more portfolio items here if needed -->
+        <!-- </div> -->
+        
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2">
                         <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-2.jpg') }}" alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">SPPU Result Converter</h5>
+                        </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <button type="button" class="btn-play" data-toggle="modal"
                             data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
                             <span></span>
                         </button>
+                        <a href="https://example.com" class="btn btn-primary btn-project-link">Project Link</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
                     <div class="position-relative overflow-hidden mb-2">
                         <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-3.jpg') }}" alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">SPPU Result Converter</h5>
+                        </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <button type="button" class="btn-play" data-toggle="modal"
                             data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
                             <span></span>
                         </button>
+                        <a href="https://example.com" class="btn btn-primary btn-project-link">Project Link</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative overflow-hidden mb-2">
                         <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-4.jpg') }}" alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">SPPU Result Converter</h5>
+                        </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <button type="button" class="btn-play" data-toggle="modal"
                             data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
                             <span></span>
                         </button>
+                        <a href="https://example.com" class="btn btn-primary btn-project-link">Project Link</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2">
                         <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-5.jpg') }}" alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">SPPU Result Converter</h5>
+                        </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <button type="button" class="btn-play" data-toggle="modal"
                             data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
                             <span></span>
                         </button>
+                        <a href="https://example.com" class="btn btn-primary btn-project-link">Project Link</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
                     <div class="position-relative overflow-hidden mb-2">
                         <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-6.jpg') }}" alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">SPPU Result Converter</h5>
+                        </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <button type="button" class="btn-play" data-toggle="modal"
                             data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
                             <span></span>
                         </button>
+                        <a href="https://example.com" class="btn btn-primary btn-project-link">Project Link</a>
                         </div>
                     </div>
                 </div>
@@ -328,7 +391,7 @@
 
 
     <!-- Blog Start -->
-    <div class="container-fluid pt-5" id="blog">
+    <!-- <div class="container-fluid pt-5" id="blog">
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Blog</h1>
@@ -370,7 +433,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Blog End -->
 
 
