@@ -5,7 +5,9 @@ import os
 
 
 
-SQLALCHEMY_DATABASE_URL = os.getenv('POSTGRES_DATABASE_URL_RENDER','sqlite:///./test.db')
+SQLALCHEMY_DATABASE_URL = os.getenv('POSTGRES_DATABASE_URL_RENDER')
+if SQLALCHEMY_DATABASE_URL is None:
+    SQLALCHEMY_DATABASE_URL = 'sqlite:///./test.db'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

@@ -31,7 +31,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def read_item(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request,'base_url':'http://https://surajpisal.onrender.com/'})
+    return templates.TemplateResponse("index.html", {"request": request,'base_url':'https://surajpisal.onrender.com/'})
 
 
 
