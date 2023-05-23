@@ -531,11 +531,12 @@
         $('#success').addClass('error-message'); // Apply error class to the success message element
         return;
       }
+      var base_url = '{{ base_url }}';  // Add this line
 
       // Make an AJAX POST request to the backend endpoint
       $.ajax({
         type: 'POST',
-        url: 'http://localhost:8000/message',
+        url: base_url + '/message',
         data: {
           name: name,
           email: email,
