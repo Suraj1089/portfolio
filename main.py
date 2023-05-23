@@ -6,7 +6,8 @@ from starlette.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from api.db import get_db,engine
-from api import models
+from api import models,schemas
+import os
 
 
 models.Base.metadata.create_all(bind=engine)
@@ -55,9 +56,16 @@ async def send_message(request: Request,db: Session = Depends(get_db)):
         )
 
 @app.get('/messages',status_code=status.HTTP_200_OK)
-def get_users_messages(db: Session = Depends(get_db),skip: int = 0, limit: int = 20):
-    messages = db.query(models.Contact).offset(skip).limit(limit).all()
-    return messages
+def get_users_messages(request: schemas.UserLogin, db: Session = Depends(get_db),skip: int = 0, limit: int = 20):
+    username = os.getenv('ADMIN_USER_EMAIL')
+    password = os.getenv('ADMIN_USER_PASSWORD')
+    if request.username == username and request.password == password:
+        messages = db.query(models.Contact).offset(skip).limit(limit).all()
+        return messages
+    raise HTTPException(
+        status_code=status.HTTP_451_UNAVAILABLE_FOR_LEGAL_REASONS,
+        detail='Invalid Credentials! You are not an admin.'
+    )
 
 if __name__ == '__main__':
     import uvicorn
