@@ -1,11 +1,23 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+import os 
 
-SQLALCHEMY_DATABASE_URL = "postgres://suraj:b88jwwC8aulZmvgoRHdf9RWB8YvJkpcf@dpg-chlgi9m4dadfmsmdcbo0-a/suraj_n9u9"
-# SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
+
+
+SQLALCHEMY_DATABASE_URL = os.getenv('POSTGRES_DATABASE_URL_RENDER')
+if SQLALCHEMY_DATABASE_URL is None:
+    SQLALCHEMY_DATABASE_URL = 'sqlite:///./test.db'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
+
+# Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

@@ -11,3 +11,5 @@ starlette==0.26.1
 typing_extensions==4.5.0
 uvicorn==0.22.0
 SQLAlchemy==1.4.48
+python-multipart==0.0.6
+trycourier==4.4.0
