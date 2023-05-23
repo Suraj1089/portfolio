@@ -35,7 +35,7 @@ async def read_item(request: Request):
 
 
 
-@app.post('/message')
+@app.post('/message',status_code=status.HTTP_201_CREATED)
 async def send_message(request: Request,db: Session = Depends(get_db)):
     data = await request.form()
     try:
@@ -53,7 +53,11 @@ async def send_message(request: Request,db: Session = Depends(get_db)):
             status_code=status.WS_1013_TRY_AGAIN_LATER,
             detail='Unable to send message try again!'
         )
-    
+
+@app.get('/messages',status_code=status.HTTP_200_OK)
+def get_users_messages(db: Session = Depends(get_db),skip: int = 0, limit: int = 20):
+    messages = db.query(models.Contact).offset(skip).limit(limit).all()
+    return messages
 
 if __name__ == '__main__':
     import uvicorn
