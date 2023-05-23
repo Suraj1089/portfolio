@@ -55,13 +55,26 @@ async def send_message(request: Request,db: Session = Depends(get_db)):
             detail='Unable to send message try again!'
         )
 
-@app.get('/messages',status_code=status.HTTP_200_OK)
+@app.post('/messages',status_code=status.HTTP_200_OK)
 def get_users_messages(request: schemas.UserLogin, db: Session = Depends(get_db),skip: int = 0, limit: int = 20):
     username = os.getenv('ADMIN_USER_EMAIL')
     password = os.getenv('ADMIN_USER_PASSWORD')
     if request.username == username and request.password == password:
         messages = db.query(models.Contact).offset(skip).limit(limit).all()
         return messages
+    raise HTTPException(
+        status_code=status.HTTP_451_UNAVAILABLE_FOR_LEGAL_REASONS,
+        detail='Invalid Credentials! You are not an admin.'
+    )
+
+@app.delete('/messages', status_code=status.HTTP_200_OK)
+def delete_all_messages(request: schemas.UserLogin, db: Session = Depends(get_db)):
+    username = os.getenv('ADMIN_USER_EMAIL')
+    password = os.getenv('ADMIN_USER_PASSWORD')
+    if request.username == username and request.password == password:
+        db.query(models.Contact).delete()
+        db.commit()
+        return {'message': 'All messages deleted'}
     raise HTTPException(
         status_code=status.HTTP_451_UNAVAILABLE_FOR_LEGAL_REASONS,
         detail='Invalid Credentials! You are not an admin.'

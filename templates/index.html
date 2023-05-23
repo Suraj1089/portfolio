@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="{{ url_for('static', path='img/favicon.ico') }}" rel="icon">
+    <!-- <link href="{{ url_for('static', path='img/favicon.ico') }}" rel="icon"> -->
     <!-- href="{{ url_for('static', path='/styles.css') }}" -->
 
     <!-- Google Web Fonts -->
@@ -26,6 +26,17 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ url_for('static', path='css/style.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', path='css/customs.css') }}" rel="stylesheet">
+    <style>
+        .success-message {
+            color: green;
+            font-weight: bold;
+        }
+    
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51" style="background-color: #ffffff;">
@@ -40,14 +51,16 @@
         <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
             <div class="navbar-nav m-auto py-0">
                 <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
                 <a href="#qualification" class="nav-item nav-link">Education</a>
                 <a href="#skill" class="nav-item nav-link">Skill</a>
                 <a href="#portfolio" class="nav-item nav-link">Projects</a>
                 <!-- <a href="#blog" class="nav-item nav-link">Blog</a> -->
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="#contact" class="btn btn-outline-primary d-none d-lg-block" onclick="scrollToContact()">Hire Me</a>
+            <a href="#contact" class="btn btn-outline-primary d-none d-lg-block" onclick="scrollToContact()">
+                <i class="fas fa-phone"></i> Contact Me
+              </a>
+              
         </div>
     </nav>
     <!-- Navbar End -->
@@ -436,55 +449,70 @@
     </div> -->
     <!-- Blog End -->
 
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form text-center">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="form-row">
-                                <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
-                                        required data-validation-required-message="Please enter your name" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email"
-                                        required="required" data-validation-required-message="Please enter your email"/>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject"
-                                    required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
-                                    required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send
-                                    Message</button>
-                            </div>
-                        </form>
-                        
-                    </div>
+<!-- Contact Start -->
+<div class="container-fluid py-5" id="contact">
+    <div class="container">
+      <div class="position-relative d-flex align-items-center justify-content-center">
+        <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
+        <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="contact-form text-center">
+            <div id="success"></div>
+            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+              <div class="form-row">
+                <div class="control-group col-sm-6">
+                  <input type="text" class="form-control p-4" id="name" placeholder="Your Name" required data-validation-required-message="Please enter your name" />
+                  <p class="help-block text-danger"></p>
                 </div>
-            </div>
+                <div class="control-group col-sm-6">
+                  <input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <select class="form-control form-control-sm" id="role" required="required" data-validation-required-message="Please select your role">
+                  <option value="" disabled selected>Your Role</option>
+                  <option value="Developer">Developer</option>
+                  <option value="HR">HR</option>
+                  <option value="Student">Student</option>
+                  <option value="Manager">Manager</option>
+                  <option value="Manager">Client</option>
+                  <option value="Others">Others</option>
+                </select>
+                <p class="help-block text-danger"></p>
+              </div>
+              
+              <div>
+                <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send Message</button>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Contact End -->
+  </div>
+  <!-- Contact End -->
+  
+  <style>
+    .form-control.form-control-sm {
+      height: 28px;
+      font-size: 0.875rem;
+      width: 150px;
+    }
+  </style>
+  
 
+  
 
 
     <!-- Scroll to Bottom -->
@@ -522,11 +550,19 @@
       var email = $('#email').val();
       var subject = $('#subject').val();
       var message = $('#message').val();
+      var role = $('#role').val();
+      console.log(role);
 
       // Perform field validation
-      if (name === '' || email === '' || subject === '' || message === '') {
+      if (name === '' || email === '' || subject === '' || message === '' || role === '') {
         // Display error message if any field is empty
         $('#success').text('Please fill in all fields.');
+        $('#success').removeClass('success-message');
+        $('#success').addClass('error-message'); // Apply error class to the success message element
+        return;
+      }
+      if (!validateEmail(email)) {
+        $('#success').text('Enter a valid email address!');
         $('#success').removeClass('success-message');
         $('#success').addClass('error-message'); // Apply error class to the success message element
         return;
@@ -541,6 +577,7 @@
           name: name,
           email: email,
           subject: subject,
+          role: role,
           message_body: message
         },
         dataType: "json",
@@ -563,20 +600,6 @@
   });
 </script>
 
-    
-    <style>
-        .success-message {
-            color: green;
-            font-weight: bold;
-        }
-    
-        .error-message {
-            color: red;
-            font-weight: bold;
-        }
-    </style>
-    
-
     <script>
         function refreshPage() {
             location.reload();
@@ -586,8 +609,15 @@
             contactSection.scrollIntoView({ behavior: 'smooth' });
 
         }
+        function validateEmail(email) {
+  // Regular expression for email validation
+  var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
 
     </script>
+
+
 </body>
 
 </html>

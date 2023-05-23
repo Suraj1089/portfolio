@@ -20,6 +20,7 @@ class Contact(Base):
     id = Column(Integer,primary_key=True,index=True)
     name = Column(String)
     email = Column(String,index=True)
+    role = Column(String)
     subject = Column(String)
     message = Column(Text)
     created_at = Column(DateTime,default=datetime.now())
