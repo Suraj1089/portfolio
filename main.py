@@ -80,6 +80,8 @@ def delete_all_messages(request: schemas.UserLogin, db: Session = Depends(get_db
         detail='Invalid Credentials! You are not an admin.'
     )
 
+
+
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run('main:app',host='0.0.0.0',port=8000,reload=True)
