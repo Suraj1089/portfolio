@@ -26,6 +26,14 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ url_for('static', path='css/style.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', path='css/customs.css') }}" rel="stylesheet">
+
+    <!--CHAT BOT STYLE-->
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--CHAT BOT STYLE END-->
+
     <style>
         .success-message {
             color: green;
@@ -35,6 +43,11 @@
         .error-message {
             color: red;
             font-weight: bold;
+        }
+        .form-control.form-control-sm {
+        height: 28px;
+        font-size: 0.875rem;
+        width: 150px;
         }
     </style>
 </head>
@@ -315,7 +328,7 @@
                         <button type="button" class="btn-play" data-toggle="modal" data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
                             <span></span>
                         </button>
-                        <a href="https://resultconvertor.streamlit.app/" class="btn btn-primary btn-project-link">Live Link</a>
+                        <a href="https://resultconvertor.onrender.com/" class="btn btn-primary btn-project-link">Live Link</a>
                     </div>
                 </div>
             </div>
@@ -503,13 +516,55 @@
   </div>
   <!-- Contact End -->
   
-  <style>
-    .form-control.form-control-sm {
-      height: 28px;
-      font-size: 0.875rem;
-      width: 150px;
-    }
-  </style>
+
+
+  <!--CHAT BOT ICON-->
+
+<div class="chat-bar-collapsible">
+    <button id="chat-button" type="button" class="collapsible">Chat with My Assistant!
+        <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+    </button>
+
+    <div class="content">
+        <div class="full-chat-block">
+            <!-- Message Container -->
+            <div class="outer-container">
+                <div class="chat-container">
+                    <!-- Messages -->
+                    <div id="chatbox">
+                        <h5 id="chat-timestamp"></h5>
+                        <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                    </div>
+
+                    <!-- User input box -->
+                    <div class="chat-bar-input-block">
+                        <div id="userInput">
+                            <input id="textInput" class="input-box" type="text" name="msg"
+                                placeholder="Tap 'Enter' to send a message">
+                            <p></p>
+                        </div>
+
+                        <div class="chat-bar-icons">
+                            <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                onclick="heartButton()"></i>
+                            <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                onclick="sendButton()"></i>
+                        </div>
+                    </div>
+
+                    <div id="chat-bar-bottom">
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+ <!--CHAT BOT ICON END-->
   
 
     <!-- Scroll to Bottom -->
@@ -537,6 +592,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!---CHAT BOT SCRIPT-->
+    <script src="{{ url_for('static', path='/js/responses.js') }}"></script>
+<script src="{{ url_for('static', path='/js/chat.js') }}"></script>
+<!--CHAT BOT SCRIPT ENDS -->
+
 <script>
   $(document).ready(function() {
     $('#contactForm').submit(function(event) {
