@@ -40,7 +40,7 @@ async def read_item(request: Request):
 async def send_message(request: Request,db: Session = Depends(get_db)):
     data = await request.form()
     try:
-        contact = models.Contact(name=data['name'],email=data['email'],subject=data['subject'],message=data['message_body'])
+        contact = models.Contact(name=data['name'],email=data['email'],role=data['role'],subject=data['subject'],message=data['message_body'])
         db.add(contact)
         db.commit()
         db.refresh(contact)
