@@ -5,6 +5,7 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+
 .collapsible {
     background-color: rgb(201, 113, 255);
     color: white;
@@ -174,3 +175,4 @@
         border-radius: 0px;
     }
 }
+

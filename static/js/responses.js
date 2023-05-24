@@ -1,6 +1,6 @@
 function getBotResponse(input) {
     //rock paper scissors
-    if (input == "Hi") {
+    if (input == "hi") {
         return "Hello";
     } else if (input == "who are you") {
         return "I am Suraj Assistant!";
