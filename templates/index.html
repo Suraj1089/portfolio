@@ -14,7 +14,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -34,30 +34,37 @@
 
     <!--CHAT BOT STYLE END-->
 
+    <!--font awsome-->
+      <!--font awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+  integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<!--font awseome end-->
+
+
     <style>
         .success-message {
             color: green;
             font-weight: bold;
         }
-    
+
         .error-message {
             color: red;
             font-weight: bold;
         }
+
         .form-control.form-control-sm {
-        height: 28px;
-        font-size: 0.875rem;
-        width: 150px;
+            height: 28px;
+            font-size: 0.875rem;
+            width: 150px;
         }
-        
     </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51" style="background-color: #ffffff;">
     <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-light py-3 py-lg-0 px-lg-5">
         <a href="#" class="navbar-brand ml-lg-3" onclick="refreshPage()">
-            <h1 class="m-0 display-5"><span class="text-primary">Suraj</span>Pisal</h1>
+            <h2 class="m-0 display-5"><span class="text-primary">Suraj Pisal</span></h2>
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -68,29 +75,29 @@
                 <a href="#qualification" class="nav-item nav-link">Education</a>
                 <a href="#skill" class="nav-item nav-link">Skill</a>
                 <a href="#portfolio" class="nav-item nav-link">Projects</a>
-                <!-- <a href="#blog" class="nav-item nav-link">Blog</a> -->
-                <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="#contact" class="btn btn-outline-primary d-none d-lg-block" onclick="scrollToContact()">
-                <i class="fas fa-phone"></i> Contact Me
-              </a>
-              
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@getbootstrap"><i class="fas fa-phone"></i> Contact Me</button>
         </div>
     </nav>
+    
+    
     <!-- Navbar End -->
 
 
     <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>        
+                    </button>
                     <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
@@ -100,19 +107,23 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="background-color: #212529; min-height: 100vh;">
+    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home"
+        style="background-color: #212529; min-height: 100vh;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="{{ url_for('static', path='/img/about.jpg') }}" alt="">
+                    <img class="img-fluid w-100 rounded-circle shadow-sm"
+                        src="{{ url_for('static', path='/img/about.jpg') }}" alt="">
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Suraj Pisal</h1>
+                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
+                        Suraj Pisal</h1>
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
                     <div class="typed-text d-none">Software Developer</div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="{{ url_for('static', path='/Suraj_Pisal_Resume.pdf') }}" class="btn btn-outline-light mr-5" target="_blank">Download CV</a>
+                        <a href="{{ url_for('static', path='/Suraj_Pisal_Resume.pdf') }}"
+                            class="btn btn-outline-light mr-5" target="_blank">Download CV</a>
                         <button type="button" class="btn-play" data-toggle="modal"
                             data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
                             <span></span>
@@ -126,7 +137,7 @@
     <!-- Header End -->
 
 
-   
+
 
 
     <!-- Qualification Start -->
@@ -134,9 +145,9 @@
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>
+                <h1 class="position-absolute text-uppercase text-primary">Education & Experience</h1>
             </div>
-            <div class="row align-items-center">
+            <div class="row align-items-start">
                 <div class="col-lg-6">
                     <h3 class="mb-4">About</h3>
                     <div class="border-left border-primary pt-2 pl-4 ml-2">
@@ -144,27 +155,23 @@
                             <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">Name: Suraj Pisal</h5>
                             <p class="mb-2"><strong>Contact: +91-9370296739</strong> | <strong>surajpisal113@gmail.com</strong></p>
-                            <p>Software developer skilled in Python, SQL, and FastAPI. Passionate about creating new projects.Ability to translate business requirements into technical solutions. Looking to start a career as a software developer intern</p>
+                            <p>Software developer skilled in Python, SQL, and FastAPI. Experienced in building web applications and RESTful APIs. Proficient in database design and optimization. Strong problem-solving and analytical skills. Passionate about learning new technologies and staying updated with industry trends. Excellent communication and collaboration abilities. Seeking opportunities to contribute to a dynamic development team and further enhance technical skills.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <h3 class="mb-4">Expericence</h3>
+                    <h3 class="mb-4">Experience</h3>
                     <div class="border-left border-primary pt-2 pl-4 ml-2">
                         <div class="position-relative mb-4">
                             <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">System Engineer Intern</h5>
                             <p class="mb-2"><strong>Insponse</strong> | <small>2000 - 2050</small></p>
                             <p>
-                                • Worked with a range of cutting-edge technologies including Python, FastAPI, Socket Io, Node.js, MongoDB,
-                                Docker, and AWS.
+                                • Worked with a range of cutting-edge technologies including Python, FastAPI, Socket Io, Node.js, MongoDB, Docker, and AWS.
                             </p>
-                            <p>  Collaborated with other interns and engineers to design and implement efficient and robust solutions for complex
-                                projects.
-                            </p>
+                            <p>Collaborated with other interns and engineers to design and implement efficient and robust solutions for complex projects.</p>
                             <p>
-                                • Contributed to the development of the company’s application, increasing its functionality from 20% to 80%
-                                through the implementation of efficient and robust microservices.
+                                • Contributed to the development of the company’s application, increasing its functionality from 20% to 80% through the implementation of efficient and robust microservices.
                             </p>
                         </div>
                     </div>
@@ -176,50 +183,39 @@
                             <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">Bachelor of Engineering (IT)</h5>
                             <p class="mb-2"><strong>D Y Patil College of Engineering Pune</strong> | <small>2020 - 2024</small></p>
-                            <p>Co-curricular- CS fundamentals,Data structures and algorithms, OS,Computer Networks etc</p>
+                            <p>Co-curricular- CS fundamentals, Data structures and algorithms, OS, Computer Networks, etc.</p>
                         </div>
                         <div class="position-relative mb-4">
                             <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">HSC</h5>
                             <p class="mb-2"><strong>Enzo-chem Junior College of Yeola, Nashik.</strong> | <small>2018 - 2020</small></p>
-                            <p>Cocurricular - Math, Statistics, Probability.</p>
+                            <p>Co-curricular - Math, Statistics, Probability.</p>
                         </div>
                         <div class="position-relative mb-4">
                             <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
                             <h5 class="font-weight-bold mb-1">SSC</h5>
-                            <p class="mb-2"><strong>New English School Bharam,Yeola.</strong> | <small>2012-2018</small></p>
-                            <p>Cocurricular - Math, Statistics, Probability, Science, ICT.</p>
+                            <p class="mb-2"><strong>New English School Bharam, Yeola.</strong> | <small>2012-2018</small></p>
+                            <p>Co-curricular - Math, Statistics, Probability, Science, ICT.</p>
                         </div>
                     </div>
                 </div>
-                
-                
                 <div class="col-lg-6">
                     <h3 class="mb-4">Extra-Curricular Activities</h3>
                     <div class="border-left border-primary pt-2 pl-4 ml-2">
                         <div class="position-relative mb-4">
                             <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">System Engineer Intern</h5>
                             <p>
-                                • Winner of Tech-A-Thon hackthon condusted by D Y Patil Pimpari. Created a <a href="https://writemate.streamlit.app/" target="_blank">WriteMate</a> web app.
+                                • Winner of Tech-A-Thon hackathon conducted by D Y Patil Pimpri. Created a <a href="https://writemate.streamlit.app/" target="_blank">WriteMate</a> web app.
                             </p>
-                            <p>  Collaborated with other interns and engineers to design and implement efficient and robust solutions for complex
-                                projects.
-                            </p>
-                            <p>
-                                Member-CPMC DYPCOE(College
-                                coding club)- Helps 500+ students
-                                to increase critive thinking by
-                                mentoring them.
-                            </p>
-                            
+                            <p>Collaborated with other interns and engineers to design and implement efficient and robust solutions for complex projects.</p>
+                            <p>Member-CPMC DYPCOE (College coding club) - Helps 500+ students to increase critical thinking by mentoring them.</p>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
+    
     <!-- Qualification End -->
 
 
@@ -238,7 +234,8 @@
                             <h6 class="font-weight-bold">90%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="skill mb-4">
@@ -247,7 +244,8 @@
                             <h6 class="font-weight-bold">70%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="skill mb-4">
@@ -256,7 +254,8 @@
                             <h6 class="font-weight-bold">80%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
@@ -267,7 +266,8 @@
                             <h6 class="font-weight-bold">55%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="skill mb-4">
@@ -276,7 +276,8 @@
                             <h6 class="font-weight-bold">80%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="skill mb-4">
@@ -285,7 +286,8 @@
                             <h6 class="font-weight-bold">60%</h6>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="65" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
@@ -306,108 +308,123 @@
             <div class="row">
                 <div class="col-12 text-center mb-2">
                     <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active"  data-filter="*">All</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Design</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Development</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Marketing</li>
+                        <li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">All</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Streamlit</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Backend</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Microservices</li>
                     </ul>
                 </div>
             </div>
+            
+            
 
             <!-- <button type="button" class="btn-play" data-toggle="modal"
             data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
             <span></span>
         </button> -->
-        <div class="row portfolio-container">
-            <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                <div class="position-relative overflow-hidden mb-2">
-                    <img class="img-fluid rounded w-100" src="{{ url_for('static', path='/img/portfolio-1.jpg') }}" alt="">
-                    <div class="portfolio-text-overlay">
-                        <h5 class="text-white">SPPU Result Converter</h5>
-                    </div>
-                    <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                        <button type="button" class="btn-play" data-toggle="modal" data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <a href="https://resultconvertor.onrender.com/" class="btn btn-primary btn-project-link">Live Link</a>
+            <div class="row portfolio-container">
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static', path='/img/portfolio-1.jpg') }}"
+                            alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">SPPU Result Converter</h5>
+                        </div>
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn-play" data-toggle="modal"
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://resultconvertor.onrender.com/"
+                                class="btn btn-primary btn-project-link">Live Link</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Add more portfolio items here if needed -->
-        <!-- </div> -->
-        
+                <!-- Add more portfolio items here if needed -->
+                <!-- </div> -->
+
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-2.jpg') }}" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-2.jpg') }}"
+                            alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">Heart-charity</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <a href="https://heart-charity.onrender.com/" class="btn btn-primary btn-project-link">Live Link</a>
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://heart-charity.onrender.com/" class="btn btn-primary btn-project-link">Live
+                                Link</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-3.jpg') }}" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-3.jpg') }}"
+                            alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">ShareNotes</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <a href="https://github.com/Suraj1089/shareNotes" class="btn btn-primary btn-project-link">Github Link</a>
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://github.com/Suraj1089/shareNotes"
+                                class="btn btn-primary btn-project-link">Github Link</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-4.jpg') }}" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-4.jpg') }}"
+                            alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">Movie Recommendation System</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <a href="https://github.com/Suraj1089/Movie-Recommendation-System" class="btn btn-primary btn-project-link">Github Link</a>
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://github.com/Suraj1089/Movie-Recommendation-System"
+                                class="btn btn-primary btn-project-link">Github Link</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-5.jpg') }}" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-5.jpg') }}"
+                            alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">WriteMate</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <a href="https://writemate.streamlit.app/" class="btn btn-primary btn-project-link">Live Link</a>
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://writemate.streamlit.app/" class="btn btn-primary btn-project-link">Live
+                                Link</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-6.jpg') }}" alt="">
+                        <img class="img-fluid rounded w-100" src="{{ url_for('static',path='/img/portfolio-6.jpg') }}"
+                            alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">Github-Project-Scrapper</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <a href="https://githubprojectscrapper.onrender.com/" class="btn btn-primary btn-project-link">Live Link</a>
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://githubprojectscrapper.onrender.com/"
+                                class="btn btn-primary btn-project-link">Live Link</a>
                         </div>
                     </div>
                 </div>
@@ -415,7 +432,20 @@
         </div>
     </div>
     <!-- Portfolio End -->
-
+    <div class="col-12 text-center mb-2">
+    <ul class="list-inline mb-0">
+        <li class="list-inline-item">
+            <a href="https://github.com/Suraj1089" target="_blank">
+                <i class="fab fa-github fa-2x animated bounce"></i>
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/surajpisal" target="_blank">
+                <i class="fab fa-linkedin fa-2x animated bounce"></i>
+            </a>
+        </li>
+    </ul>
+</div>
 
     <!-- Blog Start -->
     <!-- <div class="container-fluid pt-5" id="blog">
@@ -463,110 +493,86 @@
     </div> -->
     <!-- Blog End -->
 
-<!-- Contact Start -->
-<div class="container-fluid py-5" id="contact">
-    <div class="container">
-      <div class="position-relative d-flex align-items-center justify-content-center">
-        <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
-        <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
+    <!-- <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="contact-form text-center">
-            <div id="success"></div>
-            <form name="sentMessage" id="contactForm" novalidate="novalidate">
-              <div class="form-row">
-                <div class="control-group col-sm-6">
-                  <input type="text" class="form-control p-4" id="name" placeholder="Your Name" required data-validation-required-message="Please enter your name" />
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+    <!-- Contact Start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Contact </h1> &nbsp;&nbsp;&nbsp;
+              <div id="submitting-form-spinner" style="display: none;">Submitting form &nbsp;
+                <i class="fas fa-sync fa-spin"></i>
+              </div>
+              <div id="response-message-box" class="" style="display: none;">
+                <button type="button" class="close" data-bs-dismiss="alert"></button>
+                <div id="success"></div>
+              </div>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+              <form name="sendMessage" id="contactForm" novalidate="novalidate">
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" rows="5" id="message" placeholder="Message" required="required"
+                    data-validation-required-message="Please enter your message"></textarea>
+                </div>
+                <div class="control-group">
+                  <select class="form-control form-control-sm" id="role" required="required"
+                    data-validation-required-message="Please select your role">
+                    <option value="" disabled selected>Are You</option>
+                    <option value="Developer">Developer</option>
+                    <option value="HR">HR</option>
+                    <option value="Student">Student</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Manager">Client</option>
+                    <option value="Others">Others</option>
+                  </select>
                   <p class="help-block text-danger"></p>
                 </div>
-                <div class="control-group col-sm-6">
-                  <input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="control-group">
-                <input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                <p class="help-block text-danger"></p>
-              </div>
-              <div class="control-group">
-                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                <p class="help-block text-danger"></p>
-              </div>
-              <div class="control-group">
-                <select class="form-control form-control-sm" id="role" required="required" data-validation-required-message="Please select your role">
-                  <option value="" disabled selected>Your Role</option>
-                  <option value="Developer">Developer</option>
-                  <option value="HR">HR</option>
-                  <option value="Student">Student</option>
-                  <option value="Manager">Manager</option>
-                  <option value="Manager">Client</option>
-                  <option value="Others">Others</option>
-                </select>
-                <p class="help-block text-danger"></p>
-              </div>
-              
-              <div>
-                <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send Message</button>
-              </div>
+            </div>
+            <div class="modal-footer">
+    
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
+            </div>
             </form>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Contact End -->
-  
+    <!-- Contact End -->
+ 
 
 
-  <!--CHAT BOT ICON-->
 
-<div class="chat-bar-collapsible">
-    <button id="chat-button" type="button" class="collapsible">Chat with My Assistant!
-        <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
-    </button>
-
-    <div class="content">
-        <div class="full-chat-block">
-            <!-- Message Container -->
-            <div class="outer-container">
-                <div class="chat-container">
-                    <!-- Messages -->
-                    <div id="chatbox">
-                        <h5 id="chat-timestamp"></h5>
-                        <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
-                    </div>
-
-                    <!-- User input box -->
-                    <div class="chat-bar-input-block">
-                        <div id="userInput">
-                            <input id="textInput" class="input-box" type="text" name="msg"
-                                placeholder="Tap 'Enter' to send a message">
-                            <p></p>
-                        </div>
-
-                        <div class="chat-bar-icons">
-                            <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
-                                onclick="heartButton()"></i>
-                            <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
-                                onclick="sendButton()"></i>
-                        </div>
-                    </div>
-
-                    <div id="chat-bar-bottom">
-                        <p></p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
- <!--CHAT BOT ICON END-->
-  
 
     <!-- Scroll to Bottom -->
     <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
@@ -597,68 +603,88 @@
 
     <!---CHAT BOT SCRIPT-->
     <script src="{{ url_for('static', path='/js/responses.js') }}"></script>
-<script src="{{ url_for('static', path='/js/chat.js') }}"></script>
-<!--CHAT BOT SCRIPT ENDS -->
+    <script src="{{ url_for('static', path='/js/chat.js') }}"></script>
+    <!--CHAT BOT SCRIPT ENDS -->
 
-<script>
-  $(document).ready(function() {
-    $('#contactForm').submit(function(event) {
-      console.log('button clicked');
-      event.preventDefault();
+   <!--contact form -->
+  <script>
+    $(document).ready(function () {
+      $('#contactForm').submit(function (event) {
+        console.log('Form submitted...');
+        event.preventDefault();
 
-      var name = $('#name').val();
-      var email = $('#email').val();
-      var subject = $('#subject').val();
-      var message = $('#message').val();
-      var role = $('#role').val();
-      console.log(role);
+        $("#submitting-form-spinner").show();
 
-      // Perform field validation
-      if (name === '' || email === '' || subject === '' || message === '' || role === '') {
-        // Display error message if any field is empty
-        $('#success').text('Please fill in all fields.');
-        $('#success').removeClass('success-message');
-        $('#success').addClass('error-message'); // Apply error class to the success message element
-        return;
-      }
-      if (!validateEmail(email)) {
-        $('#success').text('Enter a valid email address!');
-        $('#success').removeClass('success-message');
-        $('#success').addClass('error-message'); // Apply error class to the success message element
-        return;
-      }
-      var base_url = '{{ base_url }}';  // Add this line
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+        var role = $('#role').val();
 
-      // Make an AJAX POST request to the backend endpoint
-      $.ajax({
-        type: 'POST',
-        url: base_url + 'message',
-        data: {
-          name: name,
-          email: email,
-          subject: subject,
-          role: role,
-          message_body: message
-        },
-        dataType: "json",
-        success: function(response) {
-          // Display success message
-          console.log('response is ' + response);
-          $('#success').text('Message sent!');
-          $('#success').addClass('success-message');
-          $('#success').removeClass('error-message'); // Remove error class from the success message element
-        },
-        error: function(error) {
-          console.log('error is ' + error);
-          // Display error message
-          $('#success').text('Error sending message.');
+
+        // Perform field validation
+        if (name === '' || email === '' || subject === '' || message === '' || role === '') {
+          // Display error message if any field is empty
+          $("#submitting-form-spinner").hide();
+          $("#response-message-box").show();
+          $("#response-message-box").addClass("alert alert-dismissible alert-danger");
+
+          $('#success').text('All fields are required.');
+          $('#success').removeClass('success-message');
           $('#success').addClass('error-message'); // Apply error class to the success message element
-          $('#success').removeClass('success-message'); // Remove success class from the success message element
+          return;
         }
+        if (!validateEmail(email)) {
+          $("#submitting-form-spinner").hide();
+          $("#response-message-box").show();
+          $("#response-message-box").addClass("alert alert-dismissible alert-danger");
+
+          $('#success').text('Enter a valid email address!');
+          $('#success').removeClass('success-message');
+          $('#success').addClass('error-message'); // Apply error class to the success message element
+          return;
+        }
+        var base_url = '{{ base_url }}';  // Add this line
+
+        // Make an AJAX POST request to the backend endpoint
+        $.ajax({
+          type: 'POST',
+          url: base_url + 'message',
+          data: {
+            name: name,
+            email: email,
+            subject: subject,
+            role: role,
+            message_body: message
+          },
+          dataType: "json",
+          success: function (response) {
+            // Display success message
+            $("#submitting-form-spinner").hide();
+            $("#response-message-box").show();
+            $("#response-message-box").removeClass("alert alert-dismissible alert-danger");
+
+            $("#response-message-box").addClass("alert alert-dismissible alert-success");
+
+            $('#success').text('Message sent to surajpisal113@gmail.com!');
+            $('#success').removeClass('error-message');
+            $('#success').addClass('success-message'); // Apply success class to the success message element
+          },
+          error: function (error) {
+            // Display error message
+            $("#submitting-form-spinner").hide();
+            $("#response-message-box").show();
+            $("#response-message-box").addClass("alert alert-dismissible alert-danger");
+
+            $('#success').text('Error sending message.Retry! Or Send Your message at:surajpisal113@gmail.com');
+            $('#success').removeClass('success-message');
+            $('#success').addClass('error-message'); // Apply error class to the success message element
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
+  <!--contact form end-->
 
     <script>
         function refreshPage() {
@@ -670,13 +696,15 @@
 
         }
         function validateEmail(email) {
-  // Regular expression for email validation
-  var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
+            // Regular expression for email validation
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
 
     </script>
-
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+ crossorigin="anonymous"></script>
 
 </body>
 

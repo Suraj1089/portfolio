@@ -39,6 +39,7 @@ async def read_item(request: Request):
 @app.post('/message',status_code=status.HTTP_201_CREATED)
 async def send_message(request: Request,db: Session = Depends(get_db)):
     data = await request.form()
+    print(data)
     try:
         contact = models.Contact(name=data['name'],email=data['email'],role=data['role'],subject=data['subject'],message=data['message_body'])
         db.add(contact)
@@ -84,4 +85,4 @@ def delete_all_messages(request: schemas.UserLogin, db: Session = Depends(get_db
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run('main:app',host='0.0.0.0',port=8000,reload=True)
+    uvicorn.run('main:app',host='0.0.0.0',port=8001,reload=True)
