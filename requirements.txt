@@ -14,3 +14,4 @@ SQLAlchemy==1.4.48
 python-multipart==0.0.6
 trycourier==4.4.0
 psycopg2-binary==2.9.6
+pytz==2023.3
