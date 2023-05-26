@@ -8,6 +8,8 @@ from sqlalchemy.orm import Session
 from api.db import get_db,engine
 from api import models,schemas
 import os
+from datetime import datetime
+import pytz
 
 
 models.Base.metadata.create_all(bind=engine)
@@ -62,7 +64,20 @@ def get_users_messages(request: schemas.UserLogin, db: Session = Depends(get_db)
     password = os.getenv('ADMIN_USER_PASSWORD')
     if request.username == username and request.password == password:
         messages = db.query(models.Contact).offset(skip).limit(limit).all()
-        return messages
+        messages_response = []
+        for i in messages:
+            messages_response.append({
+                'id':i.id,
+                'name':i.name,
+                'email':i.email,
+                'role':i.role,
+                'subject':i.subject,
+                'message':i.message,
+                'created_at':datetime.strftime(i.created_at, '%Y-%m-%d %H:%M:%S')
+            })
+
+        return messages_response
+
     raise HTTPException(
         status_code=status.HTTP_451_UNAVAILABLE_FOR_LEGAL_REASONS,
         detail='Invalid Credentials! You are not an admin.'
