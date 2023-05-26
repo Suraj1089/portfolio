@@ -73,7 +73,7 @@ def get_users_messages(request: schemas.UserLogin, db: Session = Depends(get_db)
                 'role':i.role,
                 'subject':i.subject,
                 'message':i.message,
-                'created_at':datetime.strftime(i.created_at, '%Y-%m-%d %H:%M:%S')
+                'created_at':i.created_at.replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kolkata')).strftime('%Y-%m-%d %H:%M:%S')
             })
 
         return messages_response
