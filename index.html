@@ -2,780 +2,639 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <title>suraj-pisal</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link rel="shortcut icon" href="#">
+
+    <!-- Favicon -->
+    <!-- <link href="{{ url_for('static', path='img/favicon.ico') }}" rel="icon"> -->
+    <!-- href="{{ url_for('static', path='/styles.css') }}" -->
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/customs.css" rel="stylesheet">
 
 
-  <title>surajpisal</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/suraj_pisal_photo.jpeg" rel="icon">
-  <link href="assets/img/suraj_pisal_photo.jpeg" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!--font awsome-->
+      <!--font awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+  integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<!--font awseome end-->
 
 
+    <style>
+        .success-message {
+            color: green;
+            font-weight: bold;
+        }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/dataStyle.css">
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
 
+        .form-control.form-control-sm {
+            height: 28px;
+            font-size: 0.875rem;
+            width: 150px;
+        }
+        .portfolio-item img {
+            float: left;
+            margin-right: 10px;
+            }
 
+    </style>
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="51" style="background-color: #ffffff;">
+    <!-- Navbar Start -->
+    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-light py-3 py-lg-0 px-lg-5">
+        <a href="#" class="navbar-brand ml-lg-3" onclick="refreshPage()">
+            <h2 class="m-0 display-5"><span class="text-primary">Suraj Pisal</span></h2>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0">
+                <a href="#home" class="nav-item nav-link active">Home</a>
+                <a href="#qualification" class="nav-item nav-link active">Education</a>
+                <a href="#skill" class="nav-item nav-link active">Skill</a>
+                <a href="#portfolio" class="nav-item nav-link">Projects</a>
+            </div>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@getbootstrap"><i class="fas fa-phone"></i> Contact Me</button>
+        </div>
+    </nav>
+    
+    
+    <!-- Navbar End -->
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container">
 
-      <h1><a href="index.html">Suraj Pisal</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="mr-auto"><img src="assets/img/suraj_pisal_photo.jpeg" alt="" class="img-fluid"></a> -->
-      <!-- <h2>
-
-
-       
-      </h2> -->
-      <h3>
-        
-          <span>System Engineer at Tax Salah</span>
-         
-       
-      </h3>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link active" href="#header">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#resume">Resume</a></li>
-          <li><a class="nav-link" href="#services">Projects</a></li>
-          <li><a class="nav-link" href="#portfolio">Images</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
-          <!-- Rounded switch -->
-        </ul>
-
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-      <div class="social-links">
-        <a href="https://twitter.com/SurajPi79793386" class="twitter tooltip" target="_blank"><i class="bi bi-twitter"></i></a>
-        <a href="https://github.com/Suraj1089/" class="github" target="_blank" title="Github"><i class="bi bi-github"></i></a>
-        <a href="https://www.instagram.com/suraj_pisal9/" class="instagram" target="_blank" title="instagram"><i
-            class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/surajpisal/" class="linkedin" target="_blank" title="linkedin"><i
-            class="bi bi-linkedin"></i></a>
-        <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin" target="_blank" title="Resume"><i
-            class="bi bi-file-earmark-person-fill resume-hover"></i></a>
-
-      </div>
-
+    <!-- Video Modal Start -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script>
-      // change background Image on click on colorChange button
-      const colorChangeBtn = document.getElementById("colorChange");
-      document.body.style.backgroundImage = "url('assets/img/b4.jpg')";
-      // change background image on click on slider round button
+    <!-- Video Modal End -->
 
-      colorChangeBtn.addEventListener("click", function () {
-        // show text on mouse hover on slider round button
 
-        if (colorChangeBtn.checked) {
-          document.body.style.backgroundImage = "url('assets/img/b4.jpg')";
-        } else {
-          document.body.style.backgroundImage = "url('assets/img/b3.jpg')";
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home"
+        style="background-color: #212529; min-height: 100vh;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+                    <img class="img-fluid w-100 rounded-circle shadow-sm"
+                        src="static/img/about.jpg" alt="">
+                </div>
+                <div class="col-lg-7 text-center text-lg-left">
+                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>
+                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
+                        Suraj Pisal</h1>
+                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
+                    <div class="typed-text d-none">Software Developer</div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                        <a href="static/Suraj_Pisal_Resume.pdf"
+                            class="btn btn-outline-light mr-5" target="_blank">Download CV</a>
+                        <button type="button" class="btn-play" data-toggle="modal"
+                            data-src="static/video.mp4" data-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">About Me</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+
+
+
+    <!-- Qualification Start -->
+    <div class="container-fluid py-5" id="qualification">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
+                <h1 class="position-absolute text-uppercase text-primary">Education & Experience</h1>
+            </div>
+            <div class="row align-items-start">
+                <div class="col-lg-6">
+                    <h3 class="mb-4">About</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">Name: Suraj Pisal</h5>
+                            <p class="mb-2"><strong>Contact: +91-9370296739</strong> | <strong>surajpisal113@gmail.com</strong></p>
+                            <p>Software developer skilled in Python, SQL, and FastAPI. Experienced in building web applications and RESTful APIs. Proficient in database design and optimization. Strong problem-solving and analytical skills. Passionate about learning new technologies and staying updated with industry trends. Excellent communication and collaboration abilities. Seeking opportunities to contribute to a dynamic development team and further enhance technical skills.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Experience</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">System Engineer Intern</h5>
+                            <p class="mb-2"><strong>Insponse</strong> | <small>2000 - 2050</small></p>
+                            <p>
+                                • Worked with a range of cutting-edge technologies including Python, FastAPI, Socket Io, Node.js, MongoDB, Docker, and AWS.
+                            </p>
+                            <p>Collaborated with other interns and engineers to design and implement efficient and robust solutions for complex projects.</p>
+                            <p>
+                                • Contributed to the development of the company’s application, increasing its functionality from 20% to 80% through the implementation of efficient and robust microservices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">My Education</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">Bachelor of Engineering (IT)</h5>
+                            <p class="mb-2"><strong>D Y Patil College of Engineering Pune</strong> | <small>2020 - 2024</small></p>
+                            <p>Co-curricular- CS fundamentals, Data structures and algorithms, OS, Computer Networks, etc.</p>
+                        </div>
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">HSC</h5>
+                            <p class="mb-2"><strong>Enzo-chem Junior College of Yeola, Nashik.</strong> | <small>2018 - 2020</small></p>
+                            <p>Co-curricular - Math, Statistics, Probability.</p>
+                        </div>
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">SSC</h5>
+                            <p class="mb-2"><strong>New English School Bharam, Yeola.</strong> | <small>2012-2018</small></p>
+                            <p>Co-curricular - Math, Statistics, Probability, Science, ICT.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Extra-Curricular Activities</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <p>
+                                • Winner of Tech-A-Thon hackathon conducted by D Y Patil Pimpri. Created a <a href="https://writemate.streamlit.app/" target="_blank">WriteMate</a> web app.
+                            </p>
+                            <p>Collaborated with other interns and engineers to design and implement efficient and robust solutions for complex projects.</p>
+                            <p>Member-CPMC DYPCOE (College coding club) - Helps 500+ students to increase critical thinking by mentoring them.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Qualification End -->
+
+
+    <!-- Skill Start -->
+    <div class="container-fluid py-5" id="skill">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
+                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">Python</h6>
+                            <h6 class="font-weight-bold">90%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">FastAPI</h6>
+                            <h6 class="font-weight-bold">70%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">SQL</h6>
+                            <h6 class="font-weight-bold">80%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">NodeJs</h6>
+                            <h6 class="font-weight-bold">55%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">Docker</h6>
+                            <h6 class="font-weight-bold">80%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">C/C++</h6>
+                            <h6 class="font-weight-bold">60%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="65" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Skill End -->
+
+
+
+    <!-- Portfolio Start -->
+    <div class="container-fluid pt-5 pb-3" id="portfolio">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Gallery</h1>
+                <h1 class="position-absolute text-uppercase text-primary">My Projects</h1>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center mb-2">
+                    <ul class="list-inline mb-4" id="portfolio-flters">
+                        <li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">All</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Streamlit</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Backend</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Microservices</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row portfolio-container">
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100" src="static/img/portfolio-1.jpg"
+                            alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">SPPU Result Converter</h5>
+                        </div>
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn-play" data-toggle="modal"
+                                data-src="static/video.mp4" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://resultconvertor.onrender.com/"
+                                class="btn btn-primary btn-project-link">Live Link</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more portfolio items here if needed -->
+                <!-- </div> -->
+
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100" src="static/img/portfolio-2.jpg"
+                            alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">Heart-charity</h5>
+                        </div>
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn-play" data-toggle="modal"
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://heart-charity.onrender.com/" class="btn btn-primary btn-project-link">Live
+                                Link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100" src="static/img/portfolio-3.jpg"
+                            alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">ShareNotes</h5>
+                        </div>
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn-play" data-toggle="modal"
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://github.com/Suraj1089/shareNotes"
+                                class="btn btn-primary btn-project-link">Github Link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100" src="static/img/portfolio-4.jpg"
+                            alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">Movie Recommendation System</h5>
+                        </div>
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn-play" data-toggle="modal"
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://github.com/Suraj1089/Movie-Recommendation-System"
+                                class="btn btn-primary btn-project-link">Github Link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100" src="static/img/portfolio-5.jpg"
+                            alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">WriteMate</h5>
+                        </div>
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn-play" data-toggle="modal"
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://writemate.streamlit.app/" class="btn btn-primary btn-project-link">Live
+                                Link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100" src="static/img/portfolio-6.jpg"
+                            alt="">
+                        <div class="portfolio-text-overlay">
+                            <h5 class="text-white">Github-Project-Scrapper</h5>
+                        </div>
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn-play" data-toggle="modal"
+                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <a href="https://githubprojectscrapper.onrender.com/"
+                                class="btn btn-primary btn-project-link">Live Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <!-- Portfolio End -->
+    <div class="col-12 text-center mb-2">
+    <ul class="list-inline mb-0">
+        <li class="list-inline-item">
+            <a href="https://github.com/Suraj1089" target="_blank">
+                <i class="fab fa-github fa-2x animated bounce"></i>
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/surajpisal" target="_blank">
+                <i class="fab fa-linkedin fa-2x animated bounce"></i>
+            </a>
+        </li>
+    </ul>
+    </div>
+
+  
+    <!-- Contact Start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Contact </h1> &nbsp;&nbsp;&nbsp;
+              <div id="submitting-form-spinner" style="display: none;">Submitting form &nbsp;
+                <i class="fas fa-sync fa-spin"></i>
+              </div>
+              <div id="response-message-box" class="" style="display: none;">
+                <button type="button" class="close" data-bs-dismiss="alert"></button>
+                <div id="success"></div>
+              </div>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+              <form name="sendMessage" id="contactForm" novalidate="novalidate">
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" rows="5" id="message" placeholder="Message" required="required"
+                    data-validation-required-message="Please enter your message"></textarea>
+                </div>
+                <div class="control-group">
+                  <select class="form-control form-control-sm" id="role" required="required"
+                    data-validation-required-message="Please select your role">
+                    <option value="" disabled selected>Are You</option>
+                    <option value="Developer">Developer</option>
+                    <option value="HR">HR</option>
+                    <option value="Student">Student</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Manager">Client</option>
+                    <option value="Others">Others</option>
+                  </select>
+                  <p class="help-block text-danger"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+    
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    <!-- Contact End -->
+ 
+
+
+
+
+    <!-- Scroll to Bottom -->
+    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="static/lib/typed/typed.min.js"></script>
+    <script src="static/lib/easing/easing.min.js"></script>
+    <script src="static/lib/waypoints/waypoints.min.js"></script>
+    <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="static/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="static/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="static/mail/jqBootstrapValidation.min.js"></script>
+    <script src="static/mail/contact.js"></script>
+    <!-- Template Javascript -->
+    <script src="static/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!---CHAT BOT SCRIPT-->
+    <script src="static/js/responses.js"></script>
+    <script src="static/js/chat.js"></script>
+    <!--CHAT BOT SCRIPT ENDS -->
+
+   <!--contact form -->
+  <script>
+    $(document).ready(function () {
+      $('#contactForm').submit(function (event) {
+        console.log('Form submitted...');
+        event.preventDefault();
+
+        $("#submitting-form-spinner").show();
+
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+        var role = $('#role').val();
+
+
+        // Perform field validation
+        if (name === '' || email === '' || subject === '' || message === '' || role === '') {
+          // Display error message if any field is empty
+          $("#submitting-form-spinner").hide();
+          $("#response-message-box").show();
+          $("#response-message-box").addClass("alert alert-dismissible alert-danger");
+
+          $('#success').text('All fields are required.');
+          $('#success').removeClass('success-message');
+          $('#success').addClass('error-message'); // Apply error class to the success message element
+          return;
         }
+        if (!validateEmail(email)) {
+          $("#submitting-form-spinner").hide();
+          $("#response-message-box").show();
+          $("#response-message-box").addClass("alert alert-dismissible alert-danger");
+
+          $('#success').text('Enter a valid email address!');
+          $('#success').removeClass('success-message');
+          $('#success').addClass('error-message'); // Apply error class to the success message element
+          return;
+        }
+        var base_url = '{{ base_url }}';  // Add this line
+
+        // Make an AJAX POST request to the backend endpoint
+        $.ajax({
+          type: 'POST',
+          url: 'https://surajpisal.onrender.com/message',
+          data: {
+            name: name,
+            email: email,
+            subject: subject,
+            role: role,
+            message_body: message
+          },
+          dataType: "json",
+          success: function (response) {
+            // Display success message
+            $("#submitting-form-spinner").hide();
+            $("#response-message-box").show();
+            $("#response-message-box").removeClass("alert alert-dismissible alert-danger");
+
+            $("#response-message-box").addClass("alert alert-dismissible alert-success");
+
+            $('#success').text('Message sent to surajpisal113@gmail.com!');
+            $('#success').removeClass('error-message');
+            $('#success').addClass('success-message'); // Apply success class to the success message element
+            $("#contactForm").hide();
+          },
+          error: function (error) {
+            // Display error message
+            $("#submitting-form-spinner").hide();
+            $("#response-message-box").show();
+            $("#response-message-box").addClass("alert alert-dismissible alert-danger");
+
+            $('#success').text('Error sending message.Retry! Or Send Your message at:surajpisal113@gmail.com');
+            $('#success').removeClass('success-message');
+            $('#success').addClass('error-message'); // Apply error class to the success message element
+          }
+        });
       });
+    });
+  </script>
+  <!--contact form end-->
+
+    <script>
+        function refreshPage() {
+            location.reload();
+        }
+        function scrollToContact() {
+            const contactSection = document.getElementById("contact");
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+
+        }
+        function validateEmail(email) {
+            // Regular expression for email validation
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
     </script>
-
-  </header><!-- End Header -->
-
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about">
-
-    <!-- ======= About Me ======= -->
-    <div class="about-me container">
-
-      <div class="section-title">
-        <h2>About</h2>
-        <p>Learn more about me</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4" data-aos="fade-right">
-          <img id="homeImg" src="assets/img/suraj_pisal_photo.jpeg" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>Software Developer</h3>
-          <p class="fst-italic">
-            I am a third-year student pursuing a bachelor's in Information Technology from D Y Patil College of
-            Engineering Pune. I have strong knowledge of python and SQL. I am curious to learn about other domains,
-            including NLP, Machine Learning, and AI. Currently, I am looking for an internship. So I can use my skills
-            and knowledge to solve real-world problems.
-          </p>
-          <div class="row">
-            <div class="col-lg-6">
-              <ul>
-           
-                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>
-                  <a> href="https://surajpisal.netlify.app/">https://surajpisal.netlify.app/</a></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91-9370296739</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>surajpisal113@gmail.com</span>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BE-Information Technology</span>
-                </li>
-                <li><i class="bi bi-chevron-right"></i> <strong>College:</strong> <span>D Y Patil College of Engineering
-                    Pune</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Internship:</strong> <span>Available(Remote)</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Pune, India</span></li>
-              </ul>
-            </div>
-          </div>
-          <p>
-
-          </p>
-        </div>
-      </div>
-
-    </div><!-- End About Me -->
-
-
-
-    <!-- ======= Skills  ======= -->
-    <div class="skills container">
-
-      <div class="section-title">
-        <h2>Skills</h2>
-      </div>
-
-      <div class="row skills-content">
-
-        <div class="col-lg-6">
-
-          <div class="progress">
-            <span class="skill">Python <i class="val">90%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">C++ <i class="val">90%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Django <i class="val">75%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-          <div class="progress">
-            <span class="skill">HTML,CSS <i class="val">75%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-lg-6">
-
-          <div class="progress">
-            <span class="skill">FastAPI <i class="val">50%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">PostgreSQL <i class="val">70%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">MySQL <i class="val">70%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-          <div class="progress">
-            <span class="skill">Scikit-Learn <i class="val">70%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div><!-- End Skills -->
-
-
-    <!-- ======= Interests ======= -->
-    <div class="interests container">
-
-      <div class="section-title">
-        <h2>Interests</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3 col-md-4">
-          <div class="icon-box">
-            <i class="ri-store-line" style="color: #ffbb2c;"></i>
-            <h3>Machine Learning</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-            <h3>Natural Language Processing</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-            <h3>Development</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-          <div class="icon-box">
-            <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-            <h3>Cloud Computing</h3>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- End Interests -->
-
-
-  </section><!-- End About Section -->
-
-  <!-- ======= Resume Section ======= -->
-  <section id="resume" class="resume">
-    <div class="container">
-
-
-      <div class="section-title">
-        <h2>Resume</h2>
-        <p>Suraj Pisal</p>
-      </div>
-      <p>Software Developer</p>
-
-      <div class="row">
-        <div class="col-lg-6">
-          <h3 class="resume-title">Sumary</h3>
-          <div class="resume-item pb-0">
-            <h4>Suraj Pisal</h4>
-            <p><em>Python developer, skilled in Python, Django, and SQL seeking an entry-level developer position.</em>
-            </p>
-            <p>
-            <ul>
-
-              <li>+91-9370296739</li>
-              <li>surajpisal113@gmail.com</li>
-            </ul>
-            </p>
-          </div>
-
-          <h3 class="resume-title">Education</h3>
-          <div class="resume-item">
-            <h4>Bachelor of Engineering - Information Technology</h4>
-            <h5>2020 - 2024</h5>
-            <p><em>D Y Patil College of Engineering Akurdi,Pune</em></p>
-            <p>Grade - 8.00 SGPA</p>
-          </div>
-          <div class="resume-item">
-            <h4>HSC</h4>
-            <h5>2018-2020</h5>
-            <p><em>Enzo-chem Junior College Yeola.</em></p>
-            <p>Percentage - 75%</p>
-            </p>
-          </div>
-          <div class="resume-item">
-            <h4>SSC</h4>
-            <h5>2012-2018</h5>
-            <p><em>New English School Bharam.</em></p>
-            <p>Percentage - 90%</p>
-            </p>
-          </div>
-
-
-        </div>
-        <div class="col-lg-6">
-          <h3 class="resume-title">Projects</h3>
-          <div class="resume-item">
-            <h4><a href="https://github.com/Suraj1089/Heart-Charity">1) Heart-Charity Github</a></h4>
-            <!-- <h5>2019 - Present</h5>
-            <p><em>Experion, New York, NY </em></p> -->
-            <p>
-            <ul>
-              <li>Web application for organisation.</li>
-              <li>Users can help each other by joining it. Added functionality like a login feature and also payment
-                gateway using paypal is added.
-              </li>
-              <li>Tools and technologies used: Python, Django, MySQL, HTML,CSS and JavaScript.</li>
-              <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-            </ul>
-            </p>
-          </div>
-
-          <div class="resume-item">
-            <h4><a href="https://github.com/Suraj1089/mlApis" target="_blank">2) MLApis</a></h4>
-
-            <p>
-            <ul>
-              <li>It is a web-based application in using users can acess personal codes and APIs</li>
-              <li>Added functionalities like crud operation, OAuth authentication.</li>
-              <li>Contain various APIS for personal blog,Regression,Classification,house price predction,Movie
-                Recommendation</li>
-              <li>
-                To build this system, Python, FastAPI, OAuth authentication are used.</li>
-            </ul>
-            </p>
-          </div>
-          <div class="resume-item">
-            <h4><a href="https://github.com/Suraj1089/youtubers-academy" target="_blank">3) youtubers-academy</a></h4>
-
-            <p>
-            <ul>
-              <li>Web based application which stores the details of creators.
-              </li>
-              <li>Users can Create,Delete, Update their details.</li>
-              <li>Users can see creators and theirs work.</li>
-              <li>
-                To build this system, Python, Django, OAuth authentication are used.</li>
-            </ul>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!--collapseer to show resume-->
-
-      <!-- <embed src="assets/resume/Suraj_Pisal_Resume.pdf" width="100%" height="1200px" /> -->
-
-      <a href="./assets/resume/Suraj_Pisal_Resume.pdf" class="linkedin btn btn-primary" target="_blank"><i
-          class="bi bi-file-earmark-person-fill resume-hover" title="Download PDF">Download PDF</i></a>
-    </div>
-
-
-
-
-
-  </section><!-- End Resume Section -->
-
-  <!-- ======= Services Section ======= -->
-  <section id="services" class="services">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Projects</h2>
-        <p>My Projects</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-            <h4><a href="https://github.com/Suraj1089/Heart-Charity">Heart Charity</a></h4>
-            <p>Website for organisation to promote charity Used technologies are Django,MySQL,HTML,CSS,JavaScript</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-file"></i></div>
-            <h4><a href="https://github.com/Suraj1089/SPPU-Result-Convertor">SPPU-Result Convertor</a></h4>
-            <p>Result visualiser for Engineer colleges.Convert result from pdf to excel and helps faculties to analyse
-              result quickly.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-tachometer"></i></div>
-            <h4><a href="https://github.com/Suraj1089/Wheather-Analysis-Streamlit">Wheather-Analysis-Streamlit</a></h4>
-
-            <h4>Web app made using streamlit to anlyse wheather data</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-world"></i></div>
-            <h4><a href="https://github.com/Suraj1089/Movie-Recommendation-System">Movie Recommendation System</a></h4>
-            <p>Web based app which recommends movies to users on content based filtering </p>
-          </div>
-        </div>
-
-
-
-
-      </div>
-
-    </div>
-  </section><!-- End Services Section -->
-
-  <!-- ======= Portfolio Section ======= -->
-  <section id="portfolio" class="portfolio">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Portfolio</h2>
-        <p>My Works</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="row portfolio-container">
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/s1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/s2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/h1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/h2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/bakground2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/h3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/loginh.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/h4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/mlapis.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/s4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/w1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/w2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/w3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/w4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/w5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/h1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/bakground2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <h1>Skills</h1>
-      <div id="myDiv" style="width: 100%;"></div>
-
-      <br><br><br>
-      <h1>Github contribution</h1>
-      <div class="container">
-
-        <img style="width: 100%;" src="https://ghchart.rshah.org/Suraj1089" alt="2016rshah's Github chart" />
-
-      </div>
-    </div>
-
-
-
-
-  </section><!-- End Portfolio Section -->
-
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Contact Me</p>
-      </div>
-
-      <div class="row mt-2">
-
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>My Address</h3>
-            <p>JQX6+8XM, Gawade Wada Gurudwara Colony Nigdi Pimpri-Chinchwad, Pune, Maharashtra 411044</p>
-          </div>
-        </div>
-
-
-
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-share-alt"></i>
-            <h3>Social Profiles</h3>
-            <div class="social-links">
-              <a href="https://twitter.com/SurajPi79793386" class="twitter" target="_blank"><i
-                  class="bi bi-twitter"></i></a>
-              <a href="https://www.instagram.com/suraj_pisal9/" class="instagram" target="_blank"><i
-                  class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/surajpisal/" class="linkedin" target="_blank"><i
-                  class="bi bi-linkedin"></i></a>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-envelope"></i>
-            <h3>Email Me</h3>
-            <p>surajpisal113@gmail.com</p>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-phone-call"></i>
-            <h3>Call Me</h3>
-            <p>+91-9370296739</p>
-          </div>
-        </div>
-      </div>
-
-      <form action="#" method="post" role="form" class="php-email-form mt-4">
-        <div class="row">
-          <div class="col-md-6 form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-          </div>
-          <div class="col-md-6 form-group mt-3 mt-md-0">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-          </div>
-        </div>
-        <div class="form-group mt-3">
-          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-        </div>
-        <div class="form-group mt-3">
-          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-        </div>
-        <div class="my-3">
-          <div class="loading">Loading</div>
-          <div class="error-message"></div>
-          <div class="sent-message">Your message has been sent. Thank you!</div>
-        </div>
-        <div class="text-center"><button type="submit">Send Message</button></div>
-      </form>
-
-    </div>
-  </section><!-- End Contact Section -->
-
-  <div class="credits">
-    <!-- All the links in the footer should remain intact. -->
-    <!-- You can delete the links only if you purchased the pro version. -->
-    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
-    <a href="">Developed by - @Suraj Pisal</a>
-  </div>
-
-  <!-- Vendor JS Files -->
-
-
-</body>
-
-<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-
-<!-- Template Main JS File -->
-<script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/index.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
-</script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script src="assets/js/index.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
-</script>
-<script>
-  var trace1 = {
-    x: ['Python', 'C++', 'SQL', 'Web Development', 'Machine Learning'],
-    y: [85, 70, 80, 60, 72],
-
-    marker: {
-      color: ['rgba(208,224,104,1)', 'rgba(222,45,38,0.8)', 'rgba(264,204,204,1)', 'rgba(207,201,201,1)', 'rgba(209,264,201,1)']
-    },
-    type: 'bar'
-  };
-
-  var data = [trace1];
-
-  var layout = {
-    title: 'Skills',
-    xaxis: {
-      tickangle: 0
-    },
-    yaxis: {
-      zeroline: false,
-      gridwidth: 2
-    },
-    bargap: 0.05
-
-  };
-
-
-  Plotly.newPlot('myDiv', data, layout);
-</script>
-
-
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+ crossorigin="anonymous"></script>
 
 </body>
 
