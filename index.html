@@ -87,22 +87,31 @@
 
     <!-- Video Modal Start -->
     <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
-                            allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    aria-hidden="true">
+   <div class="modal-dialog" role="document">
+       <div class="modal-content">
+           <div class="modal-body">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+               <!-- 16:9 aspect ratio -->
+               <div class="embed-responsive embed-responsive-16by9">
+                   <iframe class="embed-responsive-item" src="" id="video"></iframe>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+
+<script>
+   $('#videoModal').on('hidden.bs.modal', function () {
+    console.log("modal closed")
+       var videoElement = document.getElementById('video');
+       videoElement.pause();
+       videoElement.src = "";
+   });
+</script>
+
     <!-- Video Modal End -->
 
 
@@ -125,7 +134,7 @@
                         <a href="static/Suraj_Pisal_Resume.pdf"
                             class="btn btn-outline-light mr-5" target="_blank">Download CV</a>
                         <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="static/video.mp4" data-target="#videoModal">
+                            data-src="static/videos/charity.mp4" data-target="#videoModal">
                             <span></span>
                         </button>
                         <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">About Me</h5>
@@ -319,13 +328,13 @@
             <div class="row portfolio-container">
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="static/img/portfolio-1.jpg"
+                        <img class="img-fluid rounded w-100" src="static/img/charity.png"
                             alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">SPPU Result Converter</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <button type="button" class="btn-play" data-toggle="modal"
+                            <button type="button" class="btn-play video-button" data-toggle="modal"
                                 data-src="static/video.mp4" data-target="#videoModal">
                                 <span></span>
                             </button>
@@ -339,16 +348,16 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="static/img/portfolio-2.jpg"
+                        <img class="img-fluid rounded w-100" src="static/img/charity.png"
                             alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">Heart-charity</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <button type="button" class="btn-play" data-toggle="modal"
-                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
-                                <span></span>
-                            </button>
+                            <button type="button" class="btn-play video-button" data-toggle="modal"
+                            data-src="static/videos/charity.mp4" data-target="#videoModal">
+                            <span></span>
+                        </button>
                             <a href="https://heart-charity.onrender.com/" class="btn btn-primary btn-project-link">Live
                                 Link</a>
                         </div>
@@ -356,16 +365,16 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="static/img/portfolio-3.jpg"
+                        <img class="img-fluid rounded w-100" src="static/img/charity.png"
                             alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">ShareNotes</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <button type="button" class="btn-play" data-toggle="modal"
-                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
-                                <span></span>
-                            </button>
+                            <button type="button" class="btn-play video-button" data-toggle="modal"
+                            data-src="static/videos/charity.mp4" data-target="#videoModal">
+                            <span></span>
+                        </button>
                             <a href="https://github.com/Suraj1089/shareNotes"
                                 class="btn btn-primary btn-project-link">Github Link</a>
                         </div>
@@ -373,14 +382,14 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="static/img/portfolio-4.jpg"
+                        <img class="img-fluid rounded w-100" src="static/img/charity.png"
                             alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">Movie Recommendation System</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <button type="button" class="btn-play" data-toggle="modal"
-                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
+                            <button type="button" class="btn-play video-button" data-toggle="modal"
+                                data-src="static/videos/charity.mp4" data-target="#videoModal">
                                 <span></span>
                             </button>
                             <a href="https://github.com/Suraj1089/Movie-Recommendation-System"
@@ -390,16 +399,16 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="static/img/portfolio-5.jpg"
+                        <img class="img-fluid rounded w-100" src="static/img/charity.png"
                             alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">WriteMate</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <button type="button" class="btn-play" data-toggle="modal"
-                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
-                                <span></span>
-                            </button>
+                            <button type="button" class="btn-play video-button" data-toggle="modal"
+                            data-src="static/videos/charity.mp4" data-target="#videoModal">
+                            <span></span>
+                        </button>
                             <a href="https://writemate.streamlit.app/" class="btn btn-primary btn-project-link">Live
                                 Link</a>
                         </div>
@@ -407,16 +416,16 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
                     <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="static/img/portfolio-6.jpg"
+                        <img class="img-fluid rounded w-100" src="static/img/charity.png"
                             alt="">
                         <div class="portfolio-text-overlay">
                             <h5 class="text-white">Github-Project-Scrapper</h5>
                         </div>
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <button type="button" class="btn-play" data-toggle="modal"
-                                data-src="{{ url_for('static', path='/video.mp4') }}" data-target="#videoModal">
-                                <span></span>
-                            </button>
+                            <button type="button" class="btn-play video-button" data-toggle="modal"
+                            data-src="static/videos/scrappeproject.mp4" data-target="#videoModal">
+                            <span></span>
+                        </button>
                             <a href="https://githubprojectscrapper.onrender.com/"
                                 class="btn btn-primary btn-project-link">Live Link</a>
                         </div>
@@ -522,21 +531,22 @@
 
     <!-- Contact Javascript File -->
     <script src="static/mail/jqBootstrapValidation.min.js"></script>
-    <script src="static/mail/contact.js"></script>
+    <script type="text/JavaScript" src="static/mail/contact.js"></script>
     <!-- Template Javascript -->
-    <script src="static/js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/JavaScript" src="static/js/main.js"></script>
+    <script type="text/JavaScript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!---CHAT BOT SCRIPT-->
-    <script src="static/js/responses.js"></script>
-    <script src="static/js/chat.js"></script>
+    <script type="text/JavaScript" src="static/js/responses.js"></script>
+    <script type="text/JavaScript" src="static/js/chat.js"></script>
     <!--CHAT BOT SCRIPT ENDS -->
 
    <!--contact form -->
   <script>
+     
     $(document).ready(function () {
       $('#contactForm').submit(function (event) {
         console.log('Form submitted...');
