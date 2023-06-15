@@ -93,8 +93,7 @@
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="static/Suraj_Pisal_Resume.pdf" class="btn btn-outline-light mr-5"
                             target="_blank">Download CV</a>
-                        <button type="button" class="btn-play" data-toggle="modal" data-src="static/videos/charity.mp4"
-                            data-target="#videoModal">
+                        <button type="button" class="btn-play" data-video="./videos/charity.mp4" data-toggle="modal" data-target="#videoModal">
                             <span></span>
                         </button>
                         <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">About Me</h5>
@@ -104,6 +103,21 @@
         </div>
     </div>
     <!-- Header End -->
+
+    <!--modal-->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <video controls width="100%">
+                        <source src="" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal end-->
 
 
 
@@ -188,6 +202,60 @@
                                 <small>2012-2018</small>
                             </p>
                             <p>Co-curricular - Math, Statistics, Probability, Science, ICT.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Skills</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute"
+                                style="top: 2px; left: -32px;"></i>
+                                <button type="button" class="btn btn-outline-success">Python</button>
+                                <button type="button" class="btn btn-outline-success">FastAPI</button>
+                                <button type="button" class="btn btn-outline-success">Docker</button>
+                                <button type="button" class="btn btn-outline-success">SQL</button>
+                                <button type="button" class="btn btn-outline-success">MySQL</button>
+                                <button type="button" class="btn btn-outline-success">Django</button>
+                                <button type="button" class="btn btn-outline-success">NodeJs</button>
+                                <button type="button" class="btn btn-outline-success">MongoDB</button>
+                                <button type="button" class="btn btn-outline-success">Pandas</button>
+                                <button type="button" class="btn btn-outline-success">Numpy</button>
+                                <button type="button" class="btn btn-outline-success">HTML</button>
+                                <button type="button" class="btn btn-outline-success">SocketIO</button>
+                                <button type="button" class="btn btn-outline-success">APIS</button>
+                                <button type="button" class="btn btn-outline-success">C/C++</button>
+                                <button type="button" class="btn btn-outline-success">JavaScript</button>
+                                <button type="button" class="btn btn-outline-success">AWS EC2</button>
+                                <button type="button" class="btn btn-outline-success">Data Visualization</button>
+                                <button type="button" class="btn btn-outline-success">Web Scrapping</button>
+                                <button type="button" class="btn btn-outline-success">Web Development</button>
+                                <button type="button" class="btn btn-outline-success">Data Processing</button>
+                                <button type="button" class="btn btn-outline-success">Data Science</button>
+                                <button type="button" class="btn btn-outline-success">Machine Learning</button>
+                                <button type="button" class="btn btn-outline-success">Git</button>
+                                 <button type="button" class="btn btn-outline-success">Sckit-learn</button>
+
+                                
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Extra-Curricular Activities</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute"
+                                style="top: 2px; left: -32px;"></i>
+                            <p>
+                                • Winner of Tech-A-Thon hackathon conducted by D Y Patil Pimpri. Created a <a
+                                    href="https://writemate.streamlit.app/" target="_blank">WriteMate</a> web app.
+                            </p>
+                            <p>Collaborated with other interns and engineers to design and implement efficient and
+                                robust solutions for complex projects.</p>
+                            <p>Member-CPMC DYPCOE (College coding club) - Helps 500+ students to increase critical
+                                thinking by mentoring them.</p>
                         </div>
                     </div>
                 </div>
@@ -347,23 +415,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">Extra-Curricular Activities</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <p>
-                                • Winner of Tech-A-Thon hackathon conducted by D Y Patil Pimpri. Created a <a
-                                    href="https://writemate.streamlit.app/" target="_blank">WriteMate</a> web app.
-                            </p>
-                            <p>Collaborated with other interns and engineers to design and implement efficient and
-                                robust solutions for complex projects.</p>
-                            <p>Member-CPMC DYPCOE (College coding club) - Helps 500+ students to increase critical
-                                thinking by mentoring them.</p>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -451,7 +503,21 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-
+<script>
+        $(function() {
+            $(".video").click(function() {
+                var theModal = $(this).data("target"),
+                    videoSRC = $(this).attr("data-video"),
+                    videoSRCauto = videoSRC + "";
+                $(theModal + ' source').attr('src', videoSRCauto);
+                $(theModal + ' video')[0].load();
+            });
+    
+            $('#videoModal').on('hidden.bs.modal', function() {
+                $(this).find('video')[0].pause();
+            });
+        });
+    </script>
 
     <!--contact form -->
     <script>
