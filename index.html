@@ -23,6 +23,8 @@
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!--font awseome end-->
 
+    <!--plotly-->
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 
     <style>
         .success-message {
@@ -113,6 +115,7 @@
                         <source src="" type="video/mp4">
                     </video>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -517,8 +520,68 @@
     </div>
     <!-- Contact End -->
 
+    <div class="container-fluid py-5" id="myPlot" style="height: 400px; width: 400px">            
+        <div class="vote-section">
+          <h3>Vote for a Language:</h3>
+          <div class="vote-inputs">
+            <select id="languageSelect">
+              <option value="">Select a language</option>
+              <option value="Python">Python</option>
+              <option value="MySQL">MySQL</option>
+              <option value="Docker">Docker</option>
+              <option value="FastAPI">FastAPI</option>
+              <option value="DSA">DSA</option>
+            </select>
+          </div>
+          <div class="vote-inputs">
+            <input type="text" id="nameInput" placeholder="Enter your name" />
+          </div>
+          <button class="btn btn-outline-success" onclick="upvote()">Upvote</button>
+        </div>
+        
+        <div id="myPlot" style="height: 400px; width: 400px"></div>
+      </div>
+      
+          
+    <script>
+    const xArray = ["Python", "MySQL", "Docker", "FastAPI", "DSA"];
+    let yArray = [55, 49, 44, 24, 15];
+    const colors = ["rgba(0, 0, 255, 1)", "rgba(255, 0, 0, 1)", "rgba(0, 255, 0, 1)", "rgba(255, 255, 0, 1)", "rgba(0, 255, 255, 1)"];
+    
+    const data = [
+        {
+        x: xArray,
+        y: yArray,
+        type: "bar",
+        orientation: "v",
+        marker: {
+            color: colors
+        }
+        }
+    ];
+    
+    const layout = {
+        title: "What People says!",
+        bargap: 0.2, // Adjust the gap between bars
+        bargroupgap: 0.1 // Adjust the gap between bar groups
+    };
+    
+    Plotly.newPlot("myPlot", data, layout);
+    
+    function upvote() {
+        const languageSelect = document.getElementById("languageSelect");
+        const selectedLanguage = languageSelect.value;
+        const languageIndex = xArray.indexOf(selectedLanguage);
+        if (languageIndex !== -1) {
+        yArray[languageIndex]++;
+        Plotly.update("myPlot", { y: [yArray] });
+        }
+        languageSelect.selectedIndex = 0;
+    }
+    </script>
+    
 
-
+    
 
 
     <!-- Scroll to Bottom -->
