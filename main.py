@@ -10,6 +10,7 @@ from api import models,schemas
 import os
 from datetime import datetime
 import pytz
+import mailtrap as mt
 
 
 models.Base.metadata.create_all(bind=engine)
@@ -48,6 +49,22 @@ async def send_message(request: Request,db: Session = Depends(get_db)):
         db.commit()
         db.refresh(contact)
         print(contact)
+        try:
+            # create mail object
+            mail = mt.Mail(
+                sender=mt.Address(email=f"{data['email']}", name="Mailtrap Test"),
+                to=[mt.Address(email="surajpisal113@gmail.com")],
+                subject="You are awesome!",
+                text="Congrats for sending test email with Mailtrap!",
+            )
+            # create client and send
+            client = mt.MailtrapClient(token=os.getenv('MAIL_TOKEN'))
+            client.send(mail)
+        except:
+            return JSONResponse(
+                content='Error in sending mail!',
+                status_code=status.WS_1013_TRY_AGAIN_LATER
+            )
         return JSONResponse(
             content='Message Sent Successfully!',
             status_code=status.HTTP_201_CREATED
