@@ -91,10 +91,10 @@
                     <!--status-->
                       <div class="alert alert-success">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <span style="font-size: 24px; margin-right: 6px;">😊</span>
-                        <strong id="current-status"></strong>
+                        <span>😊</span>
+                        <strong id="current-status">Looking to start a career as a software developer.</strong>
                       </div>
-                      
+        
                        <!--status end-->
                         
                    
@@ -586,39 +586,24 @@
     <script>
 
         $(document).ready(function () {
- 
-        $.ajax({
-        url: 'https://github.com/Suraj1089',
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token, Authorization, Accept,charset,boundary,Content-Length',
-            'Access-Control-Allow-Credentials': 'true'
-            
-        },
-        method: 'GET',
-        success: function (html) {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-
-            // Find the element that contains the status
-            const statusElement = doc.querySelector('.current-status');
-
-            if (statusElement) {
-            const status = statusElement.querySelector('div').textContent.trim();
-            const statusText = document.querySelector('.status-text p');
-            statusText.textContent = status;
-            } else {
-            console.log('Status element not found');
-            }
-        },
-        error: function (error) {
-            console.error(error);
-        }
-        });
-
-
-
+            // Github Stat
+            $.ajax({
+                url: 'https:surajpisal.onrender.com/status',
+                method: 'GET',
+                success: function (data) {
+                    console.log('status api success');
+                    console.log(data);
+                    // get current-status
+                    // replace current-status with data.status
+                    
+                    $('#current-status').text(data.status);
+                },
+                error: function (error) {
+                    console.log('status api error ');
+                    console.log(error);
+                    $('#current-status').text('Looking for Software Developer Role.');
+                }
+            });
             const githubUsername = 'Suraj1089';
             // make request to github fetch avtar
             $.ajax({
@@ -686,7 +671,7 @@
                 // Make an AJAX POST request to the backend endpoint
                 $.ajax({
                     type: 'POST',
-                    url: 'http://localhost:8000/message',
+                    url: 'https://surajpisal.onrender.com/message',
                     data: {
                         name: name,
                         email: email,
