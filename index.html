@@ -53,7 +53,7 @@
     <!-- Navbar Start -->
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-light py-3 py-lg-0 px-lg-5">
         <a href="#" class="navbar-brand ml-lg-3" onclick="refreshPage()">
-            <h2 class="m-0 display-5"><span class="text-primary">Suraj Pisal</span></h2>
+            <h2 class="m-0 display-5"><span id="github-name" class="text-primary"></span></h2>
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -82,12 +82,12 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="static/img/about.jpeg" alt="">
+                    <img id="avatar" class="img-fluid w-100 rounded-circle shadow-sm" src="static/img/about.jpeg" alt="">
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
-                        Suraj Pisal</h1>
+                    <h1 id="githubname" class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
+                        </h1>
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
                     <div class="typed-text d-none">Software Developer</div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
@@ -97,6 +97,24 @@
                             <span></span>
                         </button>
                         <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">About Me</h5>
+                    </div>
+                    <!-- github linkedin icon -->
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                        <a href="https://github.com/Suraj1089"
+                            class="mr-4" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/surajpisal/"
+                            class="mr-4" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/surajpisal_/" class="mr-4"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/_surajpisal" class="mr-4"
+                            target="_blank"><i class="fab fa-twitter"></i></a>
+                            <!-- <--location -->
+                            <div>
+                                <a href="https://twitter.com/_surajpisal" class="mr-4"
+                                target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Pune,India</span>
+                            </a>
+                            </div>
+                                <!-- <--location -->
                     </div>
                 </div>
             </div>
@@ -139,11 +157,11 @@
                         <div class="position-relative mb-4">
                             <i class="far fa-dot-circle text-primary position-absolute"
                                 style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Name: Suraj Pisal</h5>
+                            <h5 id="" class="font-weight-bold mb-1">Name: Suraj Pisal</h5>
                             <p class="mb-2"><strong>Contact: +91-9370296739</strong> |
                                 <strong>surajpisal113@gmail.com</strong>
                             </p>
-                            <p>Software developer skilled in Python, SQL, and FastAPI. Experienced in building web
+                            <p id="githubbio">Software developer skilled in Python, SQL, and FastAPI. Experienced in building web
                                 applications and RESTful APIs. Proficient in database design and optimization.
                                 Strong problem-solving and analytical skills. Passionate about learning new
                                 technologies and staying updated with industry trends. Excellent communication and
@@ -521,70 +539,7 @@
             </div>
         </div>
     </div>
-    <!-- Contact End -->
-
-    <!-- <div class="container-fluid py-5" id="myPlot" style="height: 400px; width: 400px">            
-        <div class="vote-section">
-          <h3>Vote for a Language:</h3>
-          <div class="vote-inputs">
-            <select id="languageSelect">
-              <option value="">Select a language</option>
-              <option value="Python">Python</option>
-              <option value="MySQL">MySQL</option>
-              <option value="Docker">Docker</option>
-              <option value="FastAPI">FastAPI</option>
-              <option value="DSA">DSA</option>
-            </select>
-          </div>
-          <div class="vote-inputs">
-            <input type="text" id="nameInput" placeholder="Enter your name" />
-          </div>
-          <button class="btn btn-outline-success" onclick="upvote()">Upvote</button>
-        </div>
-        
-        <div id="myPlot" style="height: 400px; width: 400px"></div>
-      </div>
-      
-          
-    <script>
-    const xArray = ["Python", "MySQL", "Docker", "FastAPI", "DSA"];
-    let yArray = [55, 49, 44, 24, 15];
-    const colors = ["rgba(0, 0, 255, 1)", "rgba(255, 0, 0, 1)", "rgba(0, 255, 0, 1)", "rgba(255, 255, 0, 1)", "rgba(0, 255, 255, 1)"];
-    
-    const data = [
-        {
-        x: xArray,
-        y: yArray,
-        type: "bar",
-        orientation: "v",
-        marker: {
-            color: colors
-        }
-        }
-    ];
-    
-    const layout = {
-        title: "What People says!",
-        bargap: 0.2, // Adjust the gap between bars
-        bargroupgap: 0.1 // Adjust the gap between bar groups
-    };
-    
-    Plotly.newPlot("myPlot", data, layout);
-    
-    function upvote() {
-        const languageSelect = document.getElementById("languageSelect");
-        const selectedLanguage = languageSelect.value;
-        const languageIndex = xArray.indexOf(selectedLanguage);
-        if (languageIndex !== -1) {
-        yArray[languageIndex]++;
-        Plotly.update("myPlot", { y: [yArray] });
-        }
-        languageSelect.selectedIndex = 0;
-    }
-    </script> -->
-    
-
-    
+  
 
 
     <!-- Scroll to Bottom -->
@@ -623,6 +578,33 @@
     <script>
 
         $(document).ready(function () {
+            const githubUsername = 'Suraj1089';
+            // make request to github fetch avtar
+            $.ajax({
+                url: `https://api.github.com/users/${githubUsername}`,
+                success: function (data) {
+                    console.log(data);
+                    $('#avatar').attr('src', data.avatar_url);
+                    $('#github-link').attr('href', data.html_url);
+                    $('#github-username').text(data.login);
+                    $('#githubname').text(data.name);
+                    $('#github-bio').text(data.bio);
+                    $('#github-followers').text(data.followers);
+                    $('#github-following').text(data.following);
+                    $('#github-repos').text(data.public_repos);
+                    $('#github-location').text(data.location);
+                    $('#github-email').text(data.email);
+                    $('#github-blog').text(data.blog);
+                    $('#github-twitter').text(data.twitter_username);
+                    $('#github-company').text(data.company);
+                    $('#github-created').text(data.created_at);
+                    $('#github-updated').text(data.updated_at);
+                },
+                error: function (error) {
+                    console.log('github api error');
+                }
+            });
+
             $('#contactForm').submit(function (event) {
                 console.log('Form submitted...');
                 event.preventDefault();
