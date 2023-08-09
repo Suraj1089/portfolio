@@ -86,10 +86,18 @@
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                    <h1 id="githubname" class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
-                        </h1>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">Software Developer</div>
+                    <h1 id="githubname" class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;"></h1>
+                    
+                    <!--status-->
+                      <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <span style="font-size: 24px; margin-right: 6px;">😊</span>
+                        <strong id="current-status"></strong>
+                      </div>
+                      
+                       <!--status end-->
+                        
+                   
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="static/Suraj_Pisal_Resume.pdf" class="btn btn-outline-light mr-5"
                             target="_blank">Download CV</a>
@@ -578,6 +586,39 @@
     <script>
 
         $(document).ready(function () {
+ 
+        $.ajax({
+        url: 'https://github.com/Suraj1089',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token, Authorization, Accept,charset,boundary,Content-Length',
+            'Access-Control-Allow-Credentials': 'true'
+            
+        },
+        method: 'GET',
+        success: function (html) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+
+            // Find the element that contains the status
+            const statusElement = doc.querySelector('.current-status');
+
+            if (statusElement) {
+            const status = statusElement.querySelector('div').textContent.trim();
+            const statusText = document.querySelector('.status-text p');
+            statusText.textContent = status;
+            } else {
+            console.log('Status element not found');
+            }
+        },
+        error: function (error) {
+            console.error(error);
+        }
+        });
+
+
+
             const githubUsername = 'Suraj1089';
             // make request to github fetch avtar
             $.ajax({
