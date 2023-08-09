@@ -11,6 +11,10 @@ import os
 from datetime import datetime
 import pytz
 import mailtrap as mt
+from bs4 import BeautifulSoup
+import requests
+
+
 
 
 models.Base.metadata.create_all(bind=engine)
@@ -51,6 +55,9 @@ async def send_message(request: Request,db: Session = Depends(get_db)):
         print(contact)
         try:
             # create mail object
+            print('trying to send email')
+            print(os.getenv('MAIL_TOKEN'))
+            print(data['email'])
             mail = mt.Mail(
                 sender=mt.Address(email=f"{data['email']}", name="Mailtrap Test"),
                 to=[mt.Address(email="surajpisal113@gmail.com")],
@@ -63,7 +70,7 @@ async def send_message(request: Request,db: Session = Depends(get_db)):
         except:
             return JSONResponse(
                 content='Error in sending mail!',
-                status_code=status.WS_1013_TRY_AGAIN_LATER
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
         return JSONResponse(
             content='Message Sent Successfully!',
@@ -114,7 +121,32 @@ def delete_all_messages(request: schemas.UserLogin, db: Session = Depends(get_db
     )
 
 
+@app.get("/status")
+def get_status():
+    # The URL of the GitHub profile
+    url = 'https://github.com/Suraj1089'
+
+    # Send an HTTP GET request to the URL
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        # Parse the HTML content using Beautiful Soup
+        soup = BeautifulSoup(response.text, 'html.parser')
+
+        # Find the element that contains the status
+        status_element = soup.find('div', class_='user-status-message-wrapper')
+
+        if status_element:
+            status = status_element.find('div').text.strip()
+            return {"status": status}
+        else:
+            return {"status": "Status element not found"}
+    else:
+        return {"error": f"Failed to retrieve the page. Status code: {response.status_code}"}
+
 
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run('main:app',host='0.0.0.0',port=8001,reload=True)
+
+ 
