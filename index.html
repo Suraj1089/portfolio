@@ -22,31 +22,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!--font awseome end-->
-    <!--plotly-->
-    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 
-    <style>
-        .success-message {
-            color: green;
-            font-weight: bold;
-        }
 
-        .error-message {
-            color: red;
-            font-weight: bold;
-        }
-
-        .form-control.form-control-sm {
-            height: 28px;
-            font-size: 0.875rem;
-            width: 150px;
-        }
-
-        .portfolio-item img {
-            float: left;
-            margin-right: 10px;
-        }
-    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51" style="background-color: #ffffff;">
@@ -62,8 +39,6 @@
             <div class="navbar-nav m-auto py-0">
                 <a href="#home" class="nav-item nav-link active">Home</a>
                 <a href="#qualification" class="nav-item nav-link active">Resume</a>
-                <!-- <a href="#skill" class="nav-item nav-link active">Skill</a> -->
-                <!-- <a href="#portfolio" class="nav-item nav-link">Projects</a> -->
             </div>
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
                 data-bs-whatever="@getbootstrap"><i class="fas fa-phone"></i> Contact Me</button>
@@ -103,7 +78,7 @@
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="static/Suraj_Pisal_Resume.pdf" class="btn btn-outline-light mr-5"
                             target="_blank">Download CV</a>
-                        <button type="button" class="btn-play" data-video="./videos/charity.mp4" data-toggle="modal"
+                        <button type="button" class="btn-play" data-video="" data-toggle="modal"
                             data-target="#videoModal">
                             <span></span>
                         </button>
@@ -140,10 +115,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="videoclosebtn"><span
                             aria-hidden="true">&times;</span></button>
-                    <video controls width="100%">
-                        <source src="" type="video/mp4">
+                    <video controls width="100%" id="myVideo">
+                        <source src="./static/videos/charity.mp4" type="video/mp4">
                     </video>
                 </div>
 
@@ -361,18 +336,19 @@
                                         aria-labelledby="headingOne" data-parent="#accordionPanelsStayOpenExample">
                                         <div class="card-body">
                                             <ul class="list-unstyled d-flex flex-wrap">
-                                                
+
                                                 <li>SPPU Result Convertor is a web-based application that allows users
                                                     to quickly and easily convert PDF
                                                     files into Excel format.</li>
-                                                    
-                                                    <li> This eliminates the need for manual conversion, which can take up
-                                                        to 3 days, and allows users to complete
-                                                        the task in in just 5 minutes. Currently, all DYPCOE faculty members
-                                                        use the application to convert
-                                                        student results into Excel files, making their work 10 times faster
-                                                    </li>
-                                                    <iframe src="https://resultconvertor.onrender.com/"  style="width: 100%; height: 400px;"></iframe>
+
+                                                <li> This eliminates the need for manual conversion, which can take up
+                                                    to 3 days, and allows users to complete
+                                                    the task in in just 5 minutes. Currently, all DYPCOE faculty members
+                                                    use the application to convert
+                                                    student results into Excel files, making their work 10 times faster
+                                                </li>
+                                                <iframe src="https://resultconvertor.onrender.com/"
+                                                    style="width: 100%; height: 400px;"></iframe>
                                             </ul>
                                             <ul class="list-unstyled d-flex flex-wrap">
 
@@ -385,7 +361,7 @@
                                                 <li class="flex-fill"><strong><a
                                                             href="https://resultconvertor.onrender.com/"
                                                             target="_blank">Live-link-2</a></strong></li>
-                                               
+
                                             </ul>
                                             </ul>
                                         </div>
@@ -420,12 +396,13 @@
                                                     align with their interests or specific keyword search. </li>
                                                 <li> The application utilizes web scraping techniques to extract project
                                                     information from GitHub based on user-provided keywords.</li>
-                                                    
-                                                    <div class="embed-responsive embed-responsive-16by9">
-                                                        <img src="./static/img/gitscrapper.png" class="embed-responsive-item img-fluid" alt="scrapper Image">
-                                                    </div>
-                                            
-                                                </ul>
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <img src="./static/img/gitscrapper.png"
+                                                        class="embed-responsive-item img-fluid" alt="scrapper Image">
+                                                </div>
+
+                                            </ul>
                                             <ul class="list-unstyled d-flex flex-wrap">
                                                 <li class="flex-fill"><strong><a
                                                             href="https://github.com/Suraj1089/shareNotes"
@@ -433,7 +410,7 @@
                                                 <li class="flex-fill"><strong><a
                                                             href="https://githubprojectscrapper.onrender.com/"
                                                             target="_blank">Live-link</a></strong></li>
-                                              
+
                                             </ul>
 
                                         </div>
@@ -464,19 +441,20 @@
                                                     and experience, and scraping GitHub data, respectively.</li>
                                                 <li> It includes features such as a Project Recommendation using
                                                     google-bard api.</li>
-                                                
-                                                    <div class="embed-responsive embed-responsive-16by9">
-                                                        <img src="./static/img/sharenotes.png" class="embed-responsive-item img-fluid" alt="sharenotes Image">
-                                                    </div>
-                                                
-                                                    <li class="flex-fill"><strong><a
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <img src="./static/img/sharenotes.png"
+                                                        class="embed-responsive-item img-fluid" alt="sharenotes Image">
+                                                </div>
+
+                                                <li class="flex-fill"><strong><a
                                                             href="https://github.com/Suraj1089/shareNotes"
                                                             target="_blank">Github-link</a></strong></li>
                                                 <li class="flex-fill"><strong><a
                                                             href="https://githubprojectscrapper.onrender.com/"
                                                             target="_blank">Live-link</a></strong></li>
-                                               
-                                                
+
+
 
                                             </ul>
                                         </div>
@@ -508,10 +486,11 @@
                                                     beneficiaries.</li>
                                                 <li>Users can contribute to various campaigns, view donation history,
                                                     and get involved in supporting the causes they care about.</li>
-                                                    <div class="embed-responsive embed-responsive-16by9">
-                                                        <img src="./static/img/charity.png" class="embed-responsive-item img-fluid" alt="Charity Image">
-                                                    </div>
-                                                    
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <img src="./static/img/charity.png"
+                                                        class="embed-responsive-item img-fluid" alt="Charity Image">
+                                                </div>
+
                                             </ul>
                                             <ul class="list-unstyled d-flex flex-wrap">
                                                 <li class="flex-fill"><strong><a
@@ -520,7 +499,7 @@
                                                 <li class="flex-fill"><strong><a
                                                             href="https://heart-charity.onrender.com/"
                                                             target="_blank">Live-link</a></strong></li>
-                                                
+
                                             </ul>
                                         </div>
                                     </div>
@@ -554,7 +533,8 @@
                                                 Responsive Design
                                             </ul>
                                             <div class="embed-responsive embed-responsive-16by9">
-                                                <img src="./static/img/academpy.png" class="embed-responsive-item img-fluid" alt="academpy Image">
+                                                <img src="./static/img/academpy.png"
+                                                    class="embed-responsive-item img-fluid" alt="academpy Image">
                                             </div>
                                             <ul class="list-unstyled d-flex flex-wrap">
                                                 <li class="flex-fill"><strong><a
@@ -563,7 +543,7 @@
                                                 <li class="flex-fill"><strong><a
                                                             href="https://github.com/Suraj1089/youtuber-academy"
                                                             target="_blank">Live-link</a></strong></li>
-                                                
+
                                             </ul>
                                         </div>
                                     </div>
@@ -675,11 +655,34 @@
 
     <!--contact form -->
     <script>
+        $(document).ready(function () {
+            $("#contactForm").submit(function (event) {
+                event.preventDefault();
+
+                // Gather form data
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var subject = $("#subject").val();
+                var message = $("#message").val();
+                var role = $("#role").val();
+
+                // Create mailto link
+                var mailtoLink = "mailto:surajpisal113@gmail.com" +
+                    "?subject=" + encodeURIComponent(subject) +
+                    "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\nRole: " + role + "\n\n" + message);
+
+                // Open user's email client
+                window.location.href = mailtoLink;
+            });
+        });
+    </script>
+
+    <script>
 
         $(document).ready(function () {
             // Github Stat
             $.ajax({
-                url: 'https:surajpisal.onrender.com/status',
+                url: "https://surajpisal.onrender.com/status",
                 method: 'GET',
                 success: function (data) {
                     console.log('status api success');
@@ -695,10 +698,9 @@
                     $('#current-status').text('Looking for Software Developer Role.');
                 }
             });
-            const githubUsername = 'Suraj1089';
             // make request to github fetch avtar
             $.ajax({
-                url: `https://api.github.com/users/${githubUsername}`,
+                url: `https://api.github.com/users/Suraj1089`,
                 success: function (data) {
                     console.log(data);
                     $('#avatar').attr('src', data.avatar_url);
@@ -709,89 +711,23 @@
 
                 },
                 error: function (error) {
-                    console.log('github api error');
+                    console.log('github api error ', error);
                 }
             });
 
-            $('#contactForm').submit(function (event) {
-                console.log('Form submitted...');
-                event.preventDefault();
+            //code to stop video
+            var video = document.getElementById("myVideo");
+            var closeButton = document.getElementById("videoclosebtn");
 
-                $("#submitting-form-spinner").show();
-
-                var name = $('#name').val();
-                var email = $('#email').val();
-                var subject = $('#subject').val();
-                var message = $('#message').val();
-                var role = $('#role').val();
-
-
-                // Perform field validation
-                if (name === '' || email === '' || subject === '' || message === '' || role === '') {
-                    // Display error message if any field is empty
-                    $("#submitting-form-spinner").hide();
-                    $("#response-message-box").show();
-                    $("#response-message-box").addClass("alert alert-dismissible alert-danger");
-
-                    $('#success').text('All fields are required.');
-                    $('#success').removeClass('success-message');
-                    $('#success').addClass('error-message'); // Apply error class to the success message element
-                    return;
-                }
-                if (!validateEmail(email)) {
-                    $("#submitting-form-spinner").hide();
-                    $("#response-message-box").show();
-                    $("#response-message-box").addClass("alert alert-dismissible alert-danger");
-
-                    $('#success').text('Enter a valid email address!');
-                    $('#success').removeClass('success-message');
-                    $('#success').addClass('error-message'); // Apply error class to the success message element
-                    return;
-                }
-                var base_url = '{{ base_url }}';  // Add this line
-
-                // Make an AJAX POST request to the backend endpoint
-                $.ajax({
-                    type: 'POST',
-                    url: 'https://surajpisal.onrender.com/message',
-                    data: {
-                        name: name,
-                        email: email,
-                        subject: subject,
-                        role: role,
-                        message_body: message
-                    },
-                    dataType: "json",
-                    success: function (response) {
-                        // Display success message
-                        $("#submitting-form-spinner").hide();
-                        $("#response-message-box").show();
-                        $("#response-message-box").removeClass("alert alert-dismissible alert-danger");
-
-                        $("#response-message-box").addClass("alert alert-dismissible alert-success");
-
-                        $('#success').text('Message sent to surajpisal113@gmail.com!');
-                        $('#success').removeClass('error-message');
-                        $('#success').addClass('success-message'); // Apply success class to the success message element
-                        $("#contactForm").hide();
-                    },
-                    error: function (error) {
-                        // Display error message
-                        $("#submitting-form-spinner").hide();
-                        $("#response-message-box").show();
-                        $("#response-message-box").addClass("alert alert-dismissible alert-danger");
-
-                        $('#success').text('Error sending message.Retry! Or Send Your message at:surajpisal113@gmail.com');
-                        $('#success').removeClass('success-message');
-                        $('#success').addClass('error-message'); // Apply error class to the success message element
-                    }
-                });
+            closeButton.addEventListener("click", function () {
+                console.log("close button clicked");
+                video.pause(); // Pause the video
+                video.currentTime = 0; // Reset video to start
+                video.style.display = "none"; // Hide the video element
             });
+            //end
         });
-    </script>
-    <!--contact form end-->
 
-    <script>
         function refreshPage() {
             location.reload();
         }
@@ -799,11 +735,6 @@
             const contactSection = document.getElementById("contact");
             contactSection.scrollIntoView({ behavior: 'smooth' });
 
-        }
-        function validateEmail(email) {
-            // Regular expression for email validation
-            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return regex.test(email);
         }
 
     </script>
