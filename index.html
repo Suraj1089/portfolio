@@ -46,10 +46,7 @@
     </nav>
 
 
-    <!-- Navbar End -->
 
-
-    <!-- Video Modal End -->
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home"
@@ -69,9 +66,10 @@
                         
 
                     <!--status-->
+                    Right now I am
                     <div class="alert alert-success">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <span>😊</span>
+                        <span id="mood">😊</span>
                         <strong id="current-status">Looking to start a career as a software developer.</strong>
                     </div>
 
@@ -99,9 +97,9 @@
                                 class="fab fa-twitter"></i></a>
                         <!-- <--location -->
                         <div>
-                            <a href="https://twitter.com/_surajpisal" class="mr-4" target="_blank"><i
+                            <a href="#" class="mr-4" target="_blank"><i
                                     class="fa fa-map-marker"
-                                    aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Pune,India</span>
+                                    aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Pune, India</span>
                             </a>
                         </div>
                         <!-- <--location -->
@@ -113,21 +111,24 @@
     <!-- Header End -->
 
     <!--modal-->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="videoclosebtn"><span
-                            aria-hidden="true">&times;</span></button>
-                    <video controls width="100%" id="myVideo">
-                        <source src="./static/videos/charity.mp4" type="video/mp4">
-                    </video>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="videoclosebtn">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="video-container">
+                        <video controls width="100%" id="myVideo">
+                            <source src="./static/videos/charity.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                   
                 </div>
-
             </div>
         </div>
     </div>
+    
     <!--modal end-->
 
 
@@ -694,6 +695,7 @@
                     // replace current-status with data.status
 
                     $('#current-status').text(data.status);
+                    $('#mood').text(data.mood);
                 },
                 error: function (error) {
                     console.log('status api error ');
