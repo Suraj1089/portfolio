@@ -1,18 +1,17 @@
 from fastapi import FastAPI, Request,Form, Depends,status,HTTPException
-from fastapi.responses import HTMLResponse,JSONResponse
+from fastapi.responses import HTMLResponse,JSONResponse,RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from api.db import get_db,engine
 from api import models,schemas
 import os
-from datetime import datetime
 import pytz
 import mailtrap as mt
 from bs4 import BeautifulSoup
 import requests
+
 
 
 
@@ -39,7 +38,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def read_item(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request,'base_url':'https://surajpisal.onrender.com/'})
+    return RedirectResponse(url='https://surajpisal.netlify.com/')
 
 
 
@@ -144,6 +143,48 @@ def get_status():
             return {"status": "Status element not found"}
     else:
         return {"error": f"Failed to retrieve the page. Status code: {response.status_code}"}
+
+
+
+
+@app.get("/events")
+def get_latest_commit():
+    token = os.getenv("GITHUB_TOKEN")
+    url = f"https://api.github.com/users/Suraj1089/events"
+
+    headers = {
+        "Authorization": f"Bearer {token}"
+    }
+
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        events = response.json()
+        latest_commit = None
+
+        for event in events:
+            if event["type"] == "PushEvent":
+                repo_name = event["repo"]["name"]
+                commit_info = event["payload"]["commits"][0]
+                commit_date = event["created_at"]
+                repo_url = f"https://github.com/Suraj1089/{repo_name}"
+
+                if latest_commit is None: #or commit_date > latest_commit["created_at"]:
+                    latest_commit = {
+                        "repository": repo_name,
+                        "author": commit_info["author"]["name"],
+                        "date": commit_date,
+                        "message": commit_info["message"],
+                        "url": repo_url,
+                        "commit_url": commit_info["url"]
+                    }
+        if latest_commit:
+            return latest_commit
+        else:
+            raise HTTPException(status_code=404, detail="No recent commits found")
+    else:
+        raise HTTPException(status_code=500, detail="Error fetching events")
+
 
 
 if __name__ == '__main__':
