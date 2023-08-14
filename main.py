@@ -167,7 +167,7 @@ def get_latest_commit():
                 repo_name = event["repo"]["name"]
                 commit_info = event["payload"]["commits"][0]
                 commit_date = event["created_at"]
-                repo_url = f"https://github.com/Suraj1089/{repo_name}"
+                repo_url = f"https://github.com/{repo_name}"
 
                 if latest_commit is None: #or commit_date > latest_commit["created_at"]:
                     latest_commit = {
