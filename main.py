@@ -20,12 +20,9 @@ models.Base.metadata.create_all(bind=engine)
 
 
 app = FastAPI()
-origins = [
-    "https://surajpisal.netlify.app",
-]
 app.add_middleware(
         CORSMiddleware,
-        allow_origins=origins,
+        allow_origins=["*"],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
@@ -33,16 +30,9 @@ app.add_middleware(
 
 
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-
-templates = Jinja2Templates(directory="templates")
-
-
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
 async def read_item(request: Request):
     return RedirectResponse(url='https://surajpisal.netlify.com/')
-
 
 
 @app.post('/message',status_code=status.HTTP_201_CREATED)
@@ -125,26 +115,26 @@ def delete_all_messages(request: schemas.UserLogin, db: Session = Depends(get_db
 
 @app.get("/status")
 def get_status():
+    token = os.getenv("GITHUB_TOKEN")
     # The URL of the GitHub profile
     url = 'https://github.com/Suraj1089'
+    headers = {
+        "Authorization": f"Bearer {token}"
+    }
 
     # Send an HTTP GET request to the URL
-    response = requests.get(url,headers={'Access-Control-Allow-Origin':'https://surajpisal.onrender.com'})
-
+    response = requests.get(url,headers=headers)
+    print(response)
+    # return {'data':'response'}
     if response.status_code == 200:
         # Parse the HTML content using Beautiful Soup
         soup = BeautifulSoup(response.text, 'html.parser')
 
         # Find the element that contains the status
         status_element = soup.find('div', class_='user-status-message-wrapper')
-        try:
-            emoji_element = soup.find('div',class_='user-status-emoji-container')
-        except Exception as E:
-            emoji_element = '😊'
-
         if status_element:
             status = status_element.find('div').text.strip()
-            return {"status": status, "mood": emoji_element}
+            return {"status": status, "mood": '😊'}
         else:
             return {"status": "Status element not found"}
     else:
@@ -163,6 +153,7 @@ def get_latest_commit():
     }
 
     response = requests.get(url, headers=headers)
+    
 
     if response.status_code == 200:
         events = response.json()
@@ -195,6 +186,6 @@ def get_latest_commit():
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run('main:app',host='0.0.0.0',port=8001,reload=True)
+    uvicorn.run('main:app',host='0.0.0.0',port=8000,reload=True)
 
  
