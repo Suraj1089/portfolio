@@ -126,7 +126,7 @@ def get_status():
     url = 'https://github.com/Suraj1089'
 
     # Send an HTTP GET request to the URL
-    response = requests.get(url,headers={'Access-Control-Allow-Origin':'*'})
+    response = requests.get(url,headers={'Access-Control-Allow-Origin':'https://surajpisal.onrender.com'})
 
     if response.status_code == 200:
         # Parse the HTML content using Beautiful Soup
