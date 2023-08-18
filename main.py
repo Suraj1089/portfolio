@@ -134,7 +134,10 @@ def get_status():
 
         # Find the element that contains the status
         status_element = soup.find('div', class_='user-status-message-wrapper')
-        emoji_element = soup.find("g-emoji").text.strip()
+        try:
+            emoji_element = soup.find('div',class_='user-status-emoji-container')
+        except Exception as E:
+            emoji_element = '😊'
 
         if status_element:
             status = status_element.find('div').text.strip()
