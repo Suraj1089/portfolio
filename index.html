@@ -748,8 +748,6 @@
                 method: 'GET',
                 success: function (data) {
                     console.log('status api success');
-                    console.log(data);
-                    // get current-status
                     // replace current-status with data.status
 
                     $('#current-status').text(data.status);
@@ -765,7 +763,6 @@
             $.ajax({
                 url: `https://api.github.com/users/Suraj1089`,
                 success: function (data) {
-                    console.log(data);
                     $('#avatar').attr('src', data.avatar_url);
 
                     $('#github-link').attr('href', data.html_url);
@@ -780,8 +777,8 @@
 
             $.ajax({
                 url: `https://surajpisal.onrender.com/events`,
+                // url: 'localhost:8000/status',
                 success: function (data) {
-                    console.log(data);
                     $('#commit-message').text(data.message);
                     $('#commit-date').text(data.date);
                     $('#commit-repo').text(data.repository);
