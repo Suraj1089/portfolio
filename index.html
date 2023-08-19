@@ -135,7 +135,7 @@
     <!-- Header End -->
 
     <!--modal-->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <!-- <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -152,7 +152,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!--modal end-->
 
@@ -404,8 +404,12 @@
                                                     use the application to convert
                                                     student results into Excel files, making their work 10 times faster
                                                 </li>
-                                                <iframe src="https://resultconvertor.onrender.com/"
-                                                    style="width: 100%; height: 400px;"></iframe>
+                                                <!-- <iframe src="https://resultconvertor.onrender.com/"
+                                                    style="width: 100%; height: 400px;"></iframe> -->
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <img src="./static/img/converter.png"
+                                                            class="embed-responsive-item img-fluid" alt="scrapper Image">
+                                                    </div>
                                             </ul>
                                             <ul class="list-unstyled d-flex flex-wrap">
 
@@ -792,16 +796,16 @@
             });
 
 
-            //code to stop video
-            var video = document.getElementById("myVideo");
-            var closeButton = document.getElementById("videoclosebtn");
+            // //code to stop video
+            // var video = document.getElementById("myVideo");
+            // var closeButton = document.getElementById("videoclosebtn");
 
-            closeButton.addEventListener("click", function () {
-                console.log("close button clicked");
-                video.pause(); // Pause the video
-                video.currentTime = 0; // Reset video to start
-                video.style.display = "none"; // Hide the video element
-            });
+            // closeButton.addEventListener("click", function () {
+            //     console.log("close button clicked");
+            //     video.pause(); // Pause the video
+            //     video.currentTime = 0; // Reset video to start
+            //     video.style.display = "none"; // Hide the video element
+            // });
             //end
         });
 
