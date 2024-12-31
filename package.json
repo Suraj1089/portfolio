@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "scripts": {
+    "build": "tailwindcss build src/styles.css -o dist/styles.css",
+    "dev": "tailwindcss build src/styles.css -o dist/styles.css --watch"
+  },
+  "dependencies": {
+    "flyonui": "^1.2.0"
+  }
+}
