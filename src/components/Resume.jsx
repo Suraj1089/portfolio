@@ -4,7 +4,6 @@ import StepIndicator, { stepIndicatorClasses } from '@mui/joy/StepIndicator';
 import Stepper from '@mui/joy/Stepper';
 import Typography, { typographyClasses } from '@mui/joy/Typography';
 
-
 export default function Resume() {
   return (
     <Stepper
@@ -37,7 +36,7 @@ export default function Resume() {
         },
       })}
     >
-        <Step
+      <Step
         completed
         indicator={
           <StepIndicator variant="solid" color="success">
@@ -48,9 +47,13 @@ export default function Resume() {
         <div>
           <Typography level="title-sm">About</Typography>
         </div>
-        <Typography >Software Engineer with expertise in Python, Django, and FastAPI. Proficient in building scalable, reliable
-systems and solving real-world problems through clean, efficient code. Strong foundation in data structures,
-algorithms, and teamwork, with a commitment to delivering reliable, high-quality solutions.</Typography>
+        <Typography>
+          Software Engineer with expertise in Python, Django, and FastAPI.
+          Proficient in building scalable, reliable systems and solving
+          real-world problems through clean, efficient code. Strong foundation
+          in data structures, algorithms, and teamwork, with a commitment to
+          delivering reliable, high-quality solutions.
+        </Typography>
       </Step>
       <Step
         completed
@@ -243,43 +246,52 @@ algorithms, and teamwork, with a commitment to delivering reliable, high-quality
         <div>
           <Typography level="title-sm">Certificates</Typography>
         </div>
-  <div>
-    <Typography variant="h6">Licenses & Certifications</Typography>
+        <div>
+          <Typography variant="h6">Licenses & Certifications</Typography>
 
-    <Typography variant="h6">Django</Typography>
-    <Typography variant="body2">LearnCodeOnline.in | Issued Mar 2022</Typography>
-    <ul>
-      <li>Credential ID: 4732325-86241</li>
-      <li>Skills: Full-Stack Development, Django</li>
-    </ul>
+          <Typography variant="h6">Django</Typography>
+          <Typography variant="body2">
+            LearnCodeOnline.in | Issued Mar 2022
+          </Typography>
+          <ul>
+            <li>Credential ID: 4732325-86241</li>
+            <li>Skills: Full-Stack Development, Django</li>
+          </ul>
 
-    <Typography variant="h6">Data Structure and Algorithms</Typography>
-    <Typography variant="body2">Udemy | Issued Oct 2021</Typography>
-    <ul>
-      <li>Skills: Data Structures, Algorithms, C++, C (Programming Language)</li>
-    </ul>
+          <Typography variant="h6">Data Structure and Algorithms</Typography>
+          <Typography variant="body2">Udemy | Issued Oct 2021</Typography>
+          <ul>
+            <li>
+              Skills: Data Structures, Algorithms, C++, C (Programming Language)
+            </li>
+          </ul>
 
-    <Typography variant="h6">3D Modeling</Typography>
-    <Typography variant="body2">Udemy | Issued Aug 2021</Typography>
-    <ul>
-      <li>Course on 3D modeling fundamentals.</li>
-    </ul>
+          <Typography variant="h6">3D Modeling</Typography>
+          <Typography variant="body2">Udemy | Issued Aug 2021</Typography>
+          <ul>
+            <li>Course on 3D modeling fundamentals.</li>
+          </ul>
 
-    <Typography variant="h6">Introduction to Programming Using Python</Typography>
-    <Typography variant="body2">Udemy | Issued Jul 2021</Typography>
-    <ul>
-      <li>Skills: Python (Programming Language)</li>
-    </ul>
+          <Typography variant="h6">
+            Introduction to Programming Using Python
+          </Typography>
+          <Typography variant="body2">Udemy | Issued Jul 2021</Typography>
+          <ul>
+            <li>Skills: Python (Programming Language)</li>
+          </ul>
 
-    <Typography variant="h6">Python for Data Science and Machine Learning Bootcamp</Typography>
-    <Typography variant="body2">Udemy</Typography>
-    <ul>
-      <li>Credential ID: UC-64b76aa0-725c-41e1-9181-1c86689d5e14</li>
-      <li>Skills: Machine Learning, Natural Language Processing (NLP), Data Science</li>
-    </ul>
-  </div>
-
-        
+          <Typography variant="h6">
+            Python for Data Science and Machine Learning Bootcamp
+          </Typography>
+          <Typography variant="body2">Udemy</Typography>
+          <ul>
+            <li>Credential ID: UC-64b76aa0-725c-41e1-9181-1c86689d5e14</li>
+            <li>
+              Skills: Machine Learning, Natural Language Processing (NLP), Data
+              Science
+            </li>
+          </ul>
+        </div>
       </Step>
       <Step
         disabled
@@ -292,7 +304,6 @@ algorithms, and teamwork, with a commitment to delivering reliable, high-quality
         <div>
           <Typography level="title-sm"></Typography>
         </div>
-        
       </Step>
     </Stepper>
   );

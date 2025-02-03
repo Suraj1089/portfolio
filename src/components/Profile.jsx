@@ -13,7 +13,7 @@ export default function Profile() {
     <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' }}>
       <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}>
         <Avatar
-          src="src/assets/Suraj_Pisal_Image.jpeg"
+          src="/Suraj_Pisal_Image.jpeg"
           sx={{ '--Avatar-size': '4rem' }}
         />
         <Typography level="title-lg">Suraj Pisal</Typography>
