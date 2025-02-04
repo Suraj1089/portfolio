@@ -43,6 +43,7 @@ export default function Resume() {
             <CheckRoundedIcon />
           </StepIndicator>
         }
+        className="step"
       >
         <div>
           <Typography level="title-sm">About</Typography>
@@ -62,6 +63,7 @@ export default function Resume() {
             <CheckRoundedIcon />
           </StepIndicator>
         }
+        className="step"
       >
         <div>
           <Typography level="title-sm">Education</Typography>
@@ -71,12 +73,17 @@ export default function Resume() {
             D Y Patil College of Engineering Pune (University of Pune)
           </Typography>
           <Typography variant="body1">BE in Information Technology</Typography>
-          <Typography variant="body2">
-            Courses: Operating Systems, Data Structures and Algorithms,
-            Databases, and Computer Networks.
-          </Typography>
+          <ul>
+            <li>
+              Courses: Operating Systems, Data Structures and Algorithms,
+              Databases, and Computer Networks.
+            </li>
+          </ul>
           <Typography variant="h6">Enzo chem Junior College Yevla</Typography>
           <Typography variant="body1">High School (12th)</Typography>
+          <ul>
+            <li>Math, Science, Problem Solving.</li>
+          </ul>
         </div>
       </Step>
       <Step
@@ -86,6 +93,7 @@ export default function Resume() {
             <CheckRoundedIcon />
           </StepIndicator>
         }
+        className="step"
       >
         <div>
           <Typography level="title-sm">Experience</Typography>
@@ -97,7 +105,7 @@ export default function Resume() {
           <Typography variant="body2">Jun 2024 – Present</Typography>
           <ul>
             <li>
-              Collaborated on deploying scalable systems to onboard 25,000+
+              Collaborated on deploying scalable systems to onboard thousands of 
               vehicles, streamlining operations for rental services.
             </li>
             <li>
@@ -163,34 +171,52 @@ export default function Resume() {
         </div>
       </Step>
       <Step
-        active
+        completed
         indicator={
           <StepIndicator variant="solid" color="success">
             <CheckRoundedIcon />
           </StepIndicator>
         }
+        className="step"
       >
         <div>
           <Typography level="title-sm">Skills</Typography>
         </div>
         <div>
-          <Typography variant="body1">Languages: Python, Go.</Typography>
-          <Typography variant="body1">
-            Frameworks and Databases: Django, Django Rest Framework, FastAPI,
-            PostgreSQL.
+          <Typography>
+            <Typography variant="body1">
+              <b>Languages</b>:
+            </Typography>{' '}
+            Python, Go, JavaScript.
           </Typography>
-          <Typography variant="body1">
-            Others: Interest in Generative AI and LLMs.
+          <Typography>
+            <Typography variant="body1">
+              <b>Frameworks</b>:
+            </Typography>{' '}
+            FastAPI, Django, Django Rest Framework, NodeJs, React.
+          </Typography>
+          <Typography>
+            <Typography variant="body1">
+              <b>Databases</b>:
+            </Typography>{' '}
+            SQL with proficieny in Postgresql, Mysql.
+          </Typography>
+          <Typography>
+            <Typography variant="body1">
+              <b>Others</b>:
+            </Typography>{' '}
+            Rest APIS, Docker, Git and Github, LLM, Generative AI.
           </Typography>
         </div>
       </Step>
       <Step
-        active
+        completed
         indicator={
           <StepIndicator variant="solid" color="success">
             <CheckRoundedIcon />
           </StepIndicator>
         }
+        className="step"
       >
         <div>
           <Typography level="title-sm">Projects</Typography>
@@ -199,7 +225,14 @@ export default function Resume() {
           <Typography variant="h6">
             SPPU Result Converter (Analyse student result faster)
           </Typography>
-          <Typography variant="body2">Live-link Github</Typography>
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <a href="https://resultconvertor.streamlit.app/">
+              <Typography variant="body2">Live demo</Typography>
+            </a>
+            <a href="https://github.com/Suraj1089/SPPU-Result-Convertor">
+              <Typography variant="body2">Github</Typography>
+            </a>
+          </div>
           <ul>
             <li>
               Created a web-based result conversion application that is
@@ -216,7 +249,14 @@ export default function Resume() {
           <Typography variant="h6">
             Aiinteriviewer (Hire talent and conduct interviews with Ai)
           </Typography>
-          <Typography variant="body2">Live-link Github</Typography>
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <a href="https://hirewithaiinterviewer.onrender.com/">
+              <Typography variant="body2">Live demo</Typography>
+            </a>
+            <a href="https://github.com/rasikaghadge/AI-Automated-Interview-Platform">
+              <Typography variant="body2">Github</Typography>
+            </a>
+          </div>
           <ul>
             <li>
               AI Interviewer app used to schedule interviews with candidates and
@@ -236,54 +276,59 @@ export default function Resume() {
         </div>
       </Step>
       <Step
-        active
+        completed
         indicator={
           <StepIndicator variant="solid" color="success">
             <CheckRoundedIcon />
           </StepIndicator>
         }
+        className="step"
       >
         <div>
           <Typography level="title-sm">Certificates</Typography>
         </div>
         <div>
-          <Typography variant="h6">Licenses & Certifications</Typography>
-
-          <Typography variant="h6">Django</Typography>
-          <Typography variant="body2">
-            LearnCodeOnline.in | Issued Mar 2022
+          <Typography variant="h6">
+            Django - <b>LearnCodeOnline.in</b>
           </Typography>
+          <Typography variant="body2">Issued Date - March 2022</Typography>
           <ul>
             <li>Credential ID: 4732325-86241</li>
             <li>Skills: Full-Stack Development, Django</li>
           </ul>
 
-          <Typography variant="h6">Data Structure and Algorithms</Typography>
-          <Typography variant="body2">Udemy | Issued Oct 2021</Typography>
+          <Typography variant="h6">
+            Data Structure and Algorithms - <b>Udemy</b>
+          </Typography>
+          <Typography variant="body2">Issued Date - Oct 2021</Typography>
           <ul>
             <li>
               Skills: Data Structures, Algorithms, C++, C (Programming Language)
             </li>
           </ul>
 
-          <Typography variant="h6">3D Modeling</Typography>
-          <Typography variant="body2">Udemy | Issued Aug 2021</Typography>
+          <Typography variant="h6">
+            3D Modeling - <b>Udemy</b>
+          </Typography>
+          <Typography variant="body2">Issued Date - Aug 2021</Typography>
           <ul>
             <li>Course on 3D modeling fundamentals.</li>
           </ul>
 
           <Typography variant="h6">
-            Introduction to Programming Using Python
+            Introduction to Programming Using Python - <b>Udemy</b>
           </Typography>
-          <Typography variant="body2">Udemy | Issued Jul 2021</Typography>
+          <Typography variant="body2">Issued Date - Jul 2021</Typography>
           <ul>
             <li>Skills: Python (Programming Language)</li>
+            <li>
+              Python Programing Language, Data Structures in Python, Sqlite.
+            </li>
           </ul>
 
           <Typography variant="h6">
-            Python for Data Science and Machine Learning Bootcamp
+            Python for Data Science and Machine Learning Bootcamp - <b>Udemy</b>
           </Typography>
-          <Typography variant="body2">Udemy</Typography>
           <ul>
             <li>Credential ID: UC-64b76aa0-725c-41e1-9181-1c86689d5e14</li>
             <li>
@@ -294,12 +339,36 @@ export default function Resume() {
         </div>
       </Step>
       <Step
-        disabled
-        // indicator={
-        //   <StepIndicator variant="solid" color="success">
-        //     <CheckRoundedIcon />
-        //   </StepIndicator>
-        // }
+        completed
+        indicator={
+          <StepIndicator variant="solid" color="success">
+            <CheckRoundedIcon />
+          </StepIndicator>
+        }
+        className="step"
+      >
+        <div>
+          <Typography level="title-sm">Publications</Typography>
+        </div>
+        <div>
+          <Typography variant="h6">
+          Design and Implementation of an AI Interviewer
+          System: From Concept to Evaluation
+          </Typography>
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <a href="https://www.ijrar.org/papers/IJRAR24B3336.pdf">
+              <Typography variant="body2">Publish Paper Url</Typography>
+            </a>
+            <a href="https://ijrar.org/viewfull.php?&p_id=IJRAR24B3336">
+              <Typography variant="body2">Publish Paper Details</Typography>
+            </a>
+          </div>
+          AI-based interview, NLP in interviews, Recruitment automation, ML for interviewing, Recruitment & Selection
+
+        </div>
+      </Step>
+      <Step
+      // no content
       >
         <div>
           <Typography level="title-sm"></Typography>
