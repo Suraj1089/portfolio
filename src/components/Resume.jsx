@@ -46,7 +46,9 @@ export default function Resume() {
         className="step"
       >
         <div>
-          <Typography level="title-sm">About</Typography>
+          <Typography sx={{ fontWeight: 'bold' }} level="title-sm">
+            About
+          </Typography>
         </div>
         <Typography>
           Software Engineer with expertise in Python, Django, and FastAPI.
@@ -66,7 +68,9 @@ export default function Resume() {
         className="step"
       >
         <div>
-          <Typography level="title-sm">Education</Typography>
+          <Typography sx={{ fontWeight: 'bold' }} level="title-sm">
+            Education
+          </Typography>
         </div>
         <div>
           <Typography variant="h6">
@@ -96,7 +100,9 @@ export default function Resume() {
         className="step"
       >
         <div>
-          <Typography level="title-sm">Experience</Typography>
+          <Typography sx={{ fontWeight: 'bold' }} level="title-sm">
+            Experience
+          </Typography>
         </div>
         <div>
           <Typography variant="h6">
@@ -105,7 +111,7 @@ export default function Resume() {
           <Typography variant="body2">Jun 2024 – Present</Typography>
           <ul>
             <li>
-              Collaborated on deploying scalable systems to onboard thousands of 
+              Collaborated on deploying scalable systems to onboard thousands of
               vehicles, streamlining operations for rental services.
             </li>
             <li>
@@ -180,7 +186,9 @@ export default function Resume() {
         className="step"
       >
         <div>
-          <Typography level="title-sm">Skills</Typography>
+          <Typography sx={{ fontWeight: 'bold' }} level="title-sm">
+            Skills
+          </Typography>
         </div>
         <div>
           <Typography>
@@ -219,7 +227,9 @@ export default function Resume() {
         className="step"
       >
         <div>
-          <Typography level="title-sm">Projects</Typography>
+          <Typography sx={{ fontWeight: 'bold' }} level="title-sm">
+            Projects
+          </Typography>
         </div>
         <div>
           <Typography variant="h6">
@@ -285,7 +295,9 @@ export default function Resume() {
         className="step"
       >
         <div>
-          <Typography level="title-sm">Certificates</Typography>
+          <Typography sx={{ fontWeight: 'bold' }} level="title-sm">
+            Certificates
+          </Typography>
         </div>
         <div>
           <Typography variant="h6">
@@ -348,12 +360,14 @@ export default function Resume() {
         className="step"
       >
         <div>
-          <Typography level="title-sm">Publications</Typography>
+          <Typography sx={{ fontWeight: 'bold' }} level="title-sm">
+            Publications
+          </Typography>
         </div>
         <div>
           <Typography variant="h6">
-          Design and Implementation of an AI Interviewer
-          System: From Concept to Evaluation
+            Design and Implementation of an AI Interviewer System: From Concept
+            to Evaluation
           </Typography>
           <div style={{ display: 'flex', gap: '10px' }}>
             <a href="https://www.ijrar.org/papers/IJRAR24B3336.pdf">
@@ -363,8 +377,116 @@ export default function Resume() {
               <Typography variant="body2">Publish Paper Details</Typography>
             </a>
           </div>
-          AI-based interview, NLP in interviews, Recruitment automation, ML for interviewing, Recruitment & Selection
-
+          AI-based interview, NLP in interviews, Recruitment automation, ML for
+          interviewing, Recruitment & Selection
+        </div>
+      </Step>
+      <Step
+        completed
+        indicator={
+          <StepIndicator variant="solid" color="success">
+            <CheckRoundedIcon />
+          </StepIndicator>
+        }
+        className="step"
+      >
+        <div>
+          <Typography sx={{ fontWeight: 'bold' }} level="title-sm">
+            Why I can do?
+          </Typography>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <Typography variant="h6">
+                I can write high-quality code, participate in code reviews,
+                design/architect systems of varying complexity and scope, and
+                create high-quality documentation supporting the design/coding
+                tasks.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="h6">
+                Able to write efficient SQL queries and design schemas for
+                relational databases. Produce high-quality software that is
+                unit-tested, code-reviewed, and checked in regularly for
+                continuous integration.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="h6">
+                Translating business requirements into technical solutions.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="h6">
+                Test software to ensure responsiveness and efficiency,
+                troubleshoot, debug, and upgrade software, and also write
+                technical documentation.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="h6">
+                Can ship small features and improvements with minimal guidance
+                and support from other team members. Collaborate with the team
+                on larger projects.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="h6">
+                Can write clean, efficient, and maintainable code, following
+                best practices and coding standards.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="h6">
+                Optimize application performance, troubleshoot issues, and
+                ensure high reliability and efficiency.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="h6">Any many more such things.</Typography>
+            </li>
+          </ul>
+        </div>
+      </Step>
+      <Step
+        completed
+        indicator={
+          <StepIndicator variant="solid" color="success">
+            <CheckRoundedIcon />
+          </StepIndicator>
+        }
+        className="step"
+      >
+        <div>
+          <Typography sx={{ fontWeight: 'bold' }} level="title-sm">
+            Hobbies
+          </Typography>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <Typography variant="h6">
+                I love traveling and exploring new places. So far, I have
+                visited most of the destinations in Maharashtra. I look forward
+                to meeting new people and discovering new locations.
+              </Typography>
+              <li>
+                <Typography variant="h6">
+                  I love to code. I don&apos;t know why? 🤔 but I love. I spend
+                  most of the time on github with building someting or reading
+                  others code.
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="h6">
+                  I love reading, and I mostly prefer history books. However,
+                  these days, I’m reading documentation. 😊
+                </Typography>
+              </li>
+            </li>
+          </ul>
         </div>
       </Step>
       <Step
