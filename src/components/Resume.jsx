@@ -392,7 +392,7 @@ export default function Resume() {
       >
         <div>
           <Typography sx={{ fontWeight: 'bold' }} level="title-sm">
-            Why I can do?
+            What I can do?
           </Typography>
         </div>
         <div>
