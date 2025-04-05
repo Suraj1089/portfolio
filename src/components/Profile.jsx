@@ -1,18 +1,21 @@
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Favorite from '@mui/icons-material/Favorite';
 import Avatar from '@mui/joy/Avatar';
 import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faLinkedin,
-  faGithub,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
-import Favorite from '@mui/icons-material/Favorite';
+import { Stack } from '@mui/material';
+import Link from '@mui/material/Link';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-export default function Profile() {
+export default function Profile({ setShowResume, setShowAbout }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -25,6 +28,12 @@ export default function Profile() {
     setIsFavorite(newStatus);
     localStorage.setItem('isFavorite', newStatus);
   };
+
+  const handleAboutClick = () => {
+    setShowResume(false)
+    setShowAbout(true)
+  }
+
   return (
     <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' }}>
       <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}>
@@ -76,7 +85,20 @@ export default function Profile() {
           <Favorite sx={{ color: isFavorite ? 'red' : 'gray' }} />
           <Typography level="body-xs"></Typography>
         </Box>
+        <Stack direction="row" spacing={2}>
+        <Link underline="hover" onClick={handleAboutClick}>
+          About
+        </Link>
+        {/* <Link underline="hover" onClick={() => console.log('plillow')}>
+          Blogs
+        </Link> */}
+        </Stack>
       </CardContent>
     </Card>
   );
 }
+
+Profile.propTypes = {
+  setShowResume: PropTypes.func,
+  setShowAbout: PropTypes.func,
+};
