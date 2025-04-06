@@ -4,7 +4,7 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Favorite from '@mui/icons-material/Favorite';
+// import Favorite from '@mui/icons-material/Favorite';
 import Avatar from '@mui/joy/Avatar';
 import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
@@ -15,7 +15,7 @@ import Link from '@mui/material/Link';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-export default function Profile({ setShowResume, setShowAbout }) {
+export default function Profile({ setTabValue }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -29,10 +29,14 @@ export default function Profile({ setShowResume, setShowAbout }) {
     localStorage.setItem('isFavorite', newStatus);
   };
 
-  const handleAboutClick = () => {
-    setShowResume(false)
-    setShowAbout(true)
-  }
+  const handleLinkClick = (event) => {
+    const text = event.target.innerText;
+    if (text === 'About') {
+      setTabValue(0);
+    } else if (text === 'Blogs') {
+      setTabValue(1);
+    }
+  };
 
   return (
     <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' }}>
@@ -82,16 +86,16 @@ export default function Profile({ setShowResume, setShowAbout }) {
           sx={{ mt: 2, textAlign: 'center', cursor: 'pointer' }}
           onClick={handleFavoriteClick}
         >
-          <Favorite sx={{ color: isFavorite ? 'red' : 'gray' }} />
+          {/* <Favorite sx={{ color: isFavorite ? 'red' : 'gray' }} /> */}
           <Typography level="body-xs"></Typography>
         </Box>
         <Stack direction="row" spacing={2}>
-        <Link underline="hover" onClick={handleAboutClick}>
-          About
-        </Link>
-        {/* <Link underline="hover" onClick={() => console.log('plillow')}>
-          Blogs
-        </Link> */}
+          <Link underline="hover" onClick={handleLinkClick}>
+            About
+          </Link>
+          <Link underline="hover" onClick={handleLinkClick}>
+            Blogs
+          </Link>
         </Stack>
       </CardContent>
     </Card>
@@ -99,6 +103,5 @@ export default function Profile({ setShowResume, setShowAbout }) {
 }
 
 Profile.propTypes = {
-  setShowResume: PropTypes.func,
-  setShowAbout: PropTypes.func,
+  setTabValue: PropTypes.func,
 };

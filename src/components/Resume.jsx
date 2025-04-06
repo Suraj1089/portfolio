@@ -3,8 +3,52 @@ import Step, { stepClasses } from '@mui/joy/Step';
 import StepIndicator, { stepIndicatorClasses } from '@mui/joy/StepIndicator';
 import Stepper from '@mui/joy/Stepper';
 import Typography, { typographyClasses } from '@mui/joy/Typography';
+import { createRef, useEffect, useRef, useState } from 'react';
 
 export default function Resume() {
+  const [completedSteps, setCompletedSteps] = useState(Array(10).fill(false));
+  const stepRefs = useRef([]);
+
+  if (stepRefs.current.length !== 10) {
+    stepRefs.current = Array(10)
+      .fill()
+      .map((_, i) => stepRefs.current[i] || createRef());
+  }
+
+  useEffect(() => {
+    const observers = [];
+
+    stepRefs.current.forEach((ref, index) => {
+      if (!ref.current) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Mark this step and all previous steps as completed
+              setCompletedSteps((prev) => {
+                const newCompleted = [...prev];
+                for (let i = 0; i <= index; i++) {
+                  newCompleted[i] = true;
+                }
+                return newCompleted;
+              });
+            }
+          });
+        },
+        { threshold: 0.2 } // Trigger when 20% of element is visible
+      );
+
+      observer.observe(ref.current);
+      observers.push(observer);
+    });
+
+    // Cleanup function
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   return (
     <Stepper
       orientation="vertical"
@@ -490,7 +534,6 @@ export default function Resume() {
         </div>
       </Step>
       <Step
-      // no content
       >
         <div>
           <Typography level="title-sm"></Typography>
