@@ -73,7 +73,8 @@ export default function BlogList() {
           blogFilesWords[blogFilesWords.length - 1].split('.')[0]; // get keyword without file extension
         return (
           blogFileName.toLowerCase().includes(category) ||
-          category.includes(keyWordToFilter.toLowerCase())
+          category.includes(keyWordToFilter.toLowerCase()) ||
+          blogFilesWords.includes(category)
         );
       });
 
